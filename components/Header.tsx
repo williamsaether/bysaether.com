@@ -21,6 +21,7 @@ export default function Header() {
           <div className={`${styles.line} ${isOpen ? styles.line3 : ''}`}></div>
         </button>
         <Image
+          className={styles.image}
           src="/images/bysaether.png"
           alt="BySaether Logo"
           width={280}
@@ -31,6 +32,7 @@ export default function Header() {
         <div className={styles.socials}>
           <a href={'https://www.linkedin.com/company/bysaether/'}>
             <Image
+              className={styles.image}
               src="/images/icons/linkedin.png"
               alt="LinkedIn"
               width={24}
@@ -40,6 +42,7 @@ export default function Header() {
           </a>
           <a href={'https://www.instagram.com/bysaether/'}>
             <Image
+              className={styles.image}
               src="/images/icons/instagram.png"
               alt="Instagram"
               width={24}
