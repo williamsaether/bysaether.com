@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import Image from 'next/image';
 import Header from "@/components/Header";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import styles from "./Layout.module.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,14 +27,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Header/>
-        <Image
-          src="/images/banner.webp"
-          alt="Background banner"
-          className={styles.background}
-          width={3000}
-          height={1344}
-          priority
-        />
         {children}
       </body>
     </html>

@@ -5,90 +5,47 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+        <div className={styles.front}>
+          <Image
+            src="/images/banner.png"
+            alt="Background banner"
+            className={styles.background}
+            width={3000}
+            height={1344}
+            priority
+          />
+          <h1>Simple Solutions, Big Impact</h1>
+          <p>Turning everyday problems into digital possibilities.</p>
         </div>
+        <section className={styles.section}>
+          <header>
+            <h2>Projects</h2>
+            <div className={styles.ctas}>
+              <a className={styles.primary} href={''}>All Projects</a>
+            </div>
+          </header>
+          <div className={styles.gridHalf}>
+            <div className={styles.cardWrapper}>
+              <a href={''}>
+                <div className={styles.card}>
+                  <Image
+                    src="/images/codecore/logo.png"
+                    alt="CodeCore Logo"
+                    width={500}
+                    height={500}
+                    loading={"lazy"}
+                  />
+                  <div className={styles.cardText}>
+                    <h3>CodeCore</h3>
+                    <p>The Hub for all QR-/Barcode related</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
       </main>
       <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
       </footer>
     </div>
   );
