@@ -2,30 +2,45 @@
 
 import Image from 'next/image'
 import Link from "next/link";
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import styles from "./Header.module.css";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsScrolled(!entry.isIntersecting);
+      },{rootMargin: "-100px 0px 0px 0px"})
+
+    const target = document.querySelector('#frontpage')
+    if (target) observer.observe(target)
+
+    return () => {
+      if (target) observer.unobserve(target)
+    }
+  }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   }
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.navbar}>
         <button className={styles.burger} onClick={toggleMenu} aria-label="Toggle Menu">
-          <div className={`${styles.line} ${isOpen ? styles.line1 : ''}`}></div>
-          <div className={`${styles.line} ${isOpen ? styles.line2 : ''}`}></div>
-          <div className={`${styles.line} ${isOpen ? styles.line3 : ''}`}></div>
+          <span className={`${styles.line} ${isOpen ? styles.line1 : ''}`}></span>
+          <span className={`${styles.line} ${isOpen ? styles.line2 : ''}`}></span>
+          <span className={`${styles.line} ${isOpen ? styles.line3 : ''}`}></span>
         </button>
         <Image
           src="/images/bysaether.svg"
           alt="BySaether Logo"
-          width={280}
-          height={60}
-          style={{objectFit: "contain"}}
+          width={295}
+          height={59}
+          style={{objectFit: "contain", transform: 'translate(3px,4px)'}}
           priority
         />
         <div className={styles.socials}>
@@ -61,8 +76,6 @@ export default function Header() {
         <Link className={`${styles.navLink} ${isOpen ? styles.activeNav : ''}`} href="/">Home</Link>
         <Link className={`${styles.navLink} ${isOpen ? styles.activeNav : ''}`} href="/">About</Link>
       </nav>
-
     </header>
   )
-
 }

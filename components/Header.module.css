@@ -1,11 +1,28 @@
 .header {
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     padding: 1rem 2rem;
     color: white;
+    z-index: 1000;
 
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
+
+    transition: background-color 0.2s ease;
+}
+
+.scrolled {
+    background-color: rgba(191, 226, 255, 0.75);
+}
+
+.header img {
+    transition: height .05s ease;
+}
+
+.scrolled img {
+    height: 24px
 }
 
 .navbar {
@@ -25,8 +42,8 @@
 }
 
 .line {
-    width: 32px;
-    height: 3px;
+    width: 36px;
+    height: 4px;
     background-color: white;
     border-radius: 10px;
     transition: transform 0.3s ease, opacity 0.2s ease;
@@ -34,7 +51,7 @@
 }
 
 .line1 {
-    transform: rotate(45deg) translate(6px, 6px);
+    transform: rotate(45deg) translate(7px, 7px);
 }
 
 .line2 {
@@ -42,7 +59,7 @@
 }
 
 .line3 {
-    transform: rotate(-45deg) translate(6px, -6px);
+    transform: rotate(-45deg) translate(7px, -7px);
 }
 
 .menu {

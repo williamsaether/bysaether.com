@@ -5,9 +5,9 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <div className={styles.front}>
+        <div id="frontpage" className={styles.front}>
           <Image
-            src="/images/banner.png"
+            src="/images/banner.svg"
             alt="Background banner"
             className={styles.background}
             width={3000}
@@ -34,6 +34,7 @@ export default function Home() {
                     width={500}
                     height={500}
                     loading={"lazy"}
+                    placeholder={"empty"}
                   />
                   <div className={styles.cardText}>
                     <h3>CodeCore</h3>
@@ -45,8 +46,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <footer className={styles.footer}>
-      </footer>
     </div>
   );
 }
