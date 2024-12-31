@@ -1,15 +1,15 @@
 .footer {
     width: 100%;
     padding: 3rem 8rem 0;
-    color: var(--background);
+    color: #ededed;
     background: linear-gradient(90deg, rgb(10, 25, 44), rgb(2, 7, 23));
 }
 
 .wrapper {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 2fr;
+    grid-template-columns: 4fr 2fr 2fr 3fr;
     grid-template-rows: auto;
-    grid-column-gap: 2rem;
+    grid-column-gap: 4rem;
     margin-bottom: 2rem
 }
 
@@ -19,7 +19,7 @@
     width: 100%;
     height: 2px;
     border-radius: 2px;
-    background: var(--background);
+    background: #ededed;
 }
 
 .footer > p {
@@ -30,7 +30,6 @@
 .part {
     display: flex;
     flex-direction: column;
-
 }
 
 .part > h4 {
@@ -49,4 +48,8 @@
     height: 50px;
     width: 50px;
     margin-bottom: 1rem
+}
+
+.part > p {
+
 }

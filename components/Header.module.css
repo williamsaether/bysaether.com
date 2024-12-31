@@ -25,6 +25,10 @@
     height: 24px
 }
 
+.scrolled .socials img {
+    width: 24px;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -90,8 +94,12 @@
 
 .socials {
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     align-items: center;
     gap: 6px;
     padding-top: 8px;
+}
+
+.burger, .socials {
+    width: 110px;
 }

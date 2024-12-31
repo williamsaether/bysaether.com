@@ -70,6 +70,19 @@ export default function Header() {
               priority
             />
           </a>
+          <a
+            href={'https://github.com/BySaether'}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/images/icons/github.svg"
+              alt="GitHub"
+              width={30}
+              height={30}
+              priority
+            />
+          </a>
         </div>
       </div>
       <nav className={styles.menu}>

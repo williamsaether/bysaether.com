@@ -37,10 +37,11 @@ export default function Footer() {
         </div>
         <div className={styles.part}>
           <h4>CONTACT</h4>
+          <p>William Sæther</p>
         </div>
       </div>
       <span/>
-      <p>William Sæther &copy; 2025 - All Rights Reserved</p>
+      <p>&copy; 2025 BySaether (William Sæther) - All Rights Reserved</p>
     </footer>
   )
 }
