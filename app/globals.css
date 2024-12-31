@@ -1,12 +1,23 @@
 :root {
-  --background: #ffffff;
+  --background: #f8f8f8;
   --foreground: #171717;
+  --highlight: #fff;
+  --border: #eee;
+}
+
+[data-theme="dark"] {
+  --background: #171717;
+  --foreground: #ededed;
+  --highlight: #0f0f0f;
+  --border: #0f0f0f;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
+  :root:not([data-theme="light"]) {
+    --background: #171717;
     --foreground: #ededed;
+    --highlight: #0f0f0f;
+    --border: #0f0f0f;
   }
 }
 

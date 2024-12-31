@@ -91,8 +91,8 @@
 
 .card {
   padding: 4rem;
-  background: var(--background);
-  border: 1px solid var(--background);
+  background: var(--highlight);
+  border: 1px solid var(--border);
   border-radius: 2rem;
 }
 
