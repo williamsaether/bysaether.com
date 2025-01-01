@@ -1,13 +1,14 @@
 'use client'
 
 import Image from "next/image";
+import common from "./common.module.css"
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <div id="frontpage" className={styles.front}>
+        <div className={styles.front}>
           <Image
             src="/images/banner.svg"
             alt="Background banner"
@@ -19,11 +20,12 @@ export default function Home() {
           <h1>Simple Solutions, Big Impact</h1>
           <p>Turning everyday problems into digital possibilities.</p>
         </div>
+        <span id="intersector"/>
         <section className={styles.section}>
           <header>
             <h2>Projects</h2>
-            <div className={styles.ctas}>
-              <a className={styles.primary} href={''}>All Projects</a>
+            <div className={common.ctas}>
+              <a className={common.primary} href={''}>All Projects</a>
             </div>
           </header>
           <div className={styles.gridHalf}>

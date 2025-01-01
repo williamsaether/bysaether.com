@@ -94,7 +94,7 @@
 
 .socials {
     display: flex;
-    justify-content: right;
+    justify-content: center;
     align-items: center;
     gap: 6px;
     padding-top: 8px;

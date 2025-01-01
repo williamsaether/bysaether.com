@@ -29,10 +29,10 @@ export default function Footer() {
         <div className={styles.part}>
           <h4>LINKS</h4>
           <nav>
-            <Link href={''}>HOME</Link>
+            <Link href={'/'}>HOME</Link>
             <Link href={''}>ABOUT</Link>
             <Link href={''}>PROJECTS</Link>
-            <Link href={''}>FEEDBACK</Link>
+            <Link href={'/support'}>CONTACT</Link>
           </nav>
         </div>
         <div className={styles.part}>

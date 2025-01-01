@@ -15,7 +15,7 @@ export default function Header() {
         setIsScrolled(!entry.isIntersecting);
       },{rootMargin: "-100px 0px 0px 0px"})
 
-    const target = document.querySelector('#frontpage')
+    const target = document.querySelector('#intersector')
     if (target) observer.observe(target)
 
     return () => {
