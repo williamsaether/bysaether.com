@@ -4,8 +4,11 @@ import Image from 'next/image'
 import Link from "next/link";
 import {useEffect, useState} from "react";
 import styles from "./Header.module.css";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+  const pathname = usePathname();
+
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
@@ -21,7 +24,7 @@ export default function Header() {
     return () => {
       if (target) observer.unobserve(target)
     }
-  }, []);
+  }, [pathname]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -35,14 +38,16 @@ export default function Header() {
           <span className={`${styles.line} ${isOpen ? styles.line2 : ''}`}></span>
           <span className={`${styles.line} ${isOpen ? styles.line3 : ''}`}></span>
         </button>
-        <Image
-          src="/images/bysaether.svg"
-          alt="BySaether Logo"
-          width={295}
-          height={59}
-          style={{objectFit: "contain", transform: 'translate(3px,4px)'}}
-          priority
-        />
+        <Link href={'/'}>
+          <Image
+            src="/images/bysaether.svg"
+            alt="BySaether Logo"
+            width={295}
+            height={59}
+            style={{objectFit: "contain", transform: 'translate(3px,4px)'}}
+            priority
+          />
+        </Link>
         <div className={styles.socials}>
           <a
             href={'https://www.linkedin.com/company/bysaether/'}
