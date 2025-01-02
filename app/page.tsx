@@ -1,8 +1,9 @@
 'use client'
 
 import Image from "next/image";
-import common from "./common.module.css"
+import common from "./common.module.css";
 import styles from "./page.module.css";
+import codeCore from '@/data/projects/codecore.json';
 
 export default function Home() {
   return (
@@ -25,15 +26,15 @@ export default function Home() {
           <header>
             <h2>Projects</h2>
             <div className={common.ctas}>
-              <a className={common.primary} href={''}>All Projects</a>
+              <a className={common.primary} href={'/projects'}>All Projects</a>
             </div>
           </header>
           <div className={styles.gridHalf}>
             <div className={styles.cardWrapper}>
-              <a href={''}>
+              <a href={`/projects/${codeCore.id}`}>
                 <div className={styles.card}>
                   <Image
-                    src="/images/codecore/logo.png"
+                    src={codeCore.logoURL}
                     alt="CodeCore Logo"
                     width={500}
                     height={500}
@@ -41,8 +42,8 @@ export default function Home() {
                     placeholder={"empty"}
                   />
                   <div className={styles.cardText}>
-                    <h3>CodeCore</h3>
-                    <p>The Hub for all QR-/Barcode related</p>
+                    <h3>{codeCore.name}</h3>
+                    <p>{codeCore.description}</p>
                   </div>
                 </div>
               </a>

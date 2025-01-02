@@ -1,0 +1,52 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    margin-top: 6rem;
+    gap: 8rem;
+}
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.filter a {
+    font-size: 1.1rem;
+    font-weight: 200;
+}
+
+.filter a.active {
+    font-weight: 700;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    width: 100%;
+}
+
+.card {
+    padding: 4rem;
+    background: var(--highlight);
+    border-radius: 2rem;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+}
+
+.cardText {
+
+}
+
+.cardText h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.cardText p {
+    font-weight: 600;
+}

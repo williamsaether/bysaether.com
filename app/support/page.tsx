@@ -7,7 +7,7 @@ export default function Support() {
     <div className={styles.page}>
       <header>
         <span id="intersector"/>
-        <h1>Get in touch</h1>
+        <h1>Get in Touch</h1>
         <div className={styles.headerDesc}>
           <p>Fill in the contact form below, and we will reach out to you within 24 hours!</p>
           <div className={styles.contactInfo}>
