@@ -1,0 +1,44 @@
+.notFound {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page {
+
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.leftSide h1 {
+    font-size: 4rem;
+}
+
+.leftSide p {
+
+}
+
+.leftSide a {
+    text-decoration: underline;
+}
+
+.otherInfo {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+    margin-top: 2rem;
+}
+
+.techStack {
+    opacity: .8;
+}
+
+.rightSide img {
+    width: 15rem;
+    height: inherit;
+}

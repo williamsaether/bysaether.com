@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     margin-top: 6rem;
-    gap: 8rem;
+    gap: 6rem;
 }
 
 .filter {
@@ -23,23 +23,22 @@
 .projects {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 8rem;
     width: 100%;
 }
 
 .card {
-    padding: 4rem;
-    background: var(--highlight);
-    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .card img {
     width: 100%;
-    height: 100%;
+    height: 350px;
 }
 
 .cardText {
-
+    flex-shrink: 0;
 }
 
 .cardText h3 {

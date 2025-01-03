@@ -1,14 +1,19 @@
+'use client'
+
+import projects from '@/data/projects'
 import Image from "next/image";
 import styles from './projects.module.css'
-import {getProjects} from "@/lib/projects";
+import {useState} from "react";
 
 export default function Projects() {
+  const categories = ["All", "Website", "App"]
+  const [selectedCategory, setSelectedCategory] = useState<string>(categories[0]);
 
   const renderAllProjects = () => {
-    const projects = getProjects()
+    const filteredProjects = selectedCategory === 'All' ? projects : projects.filter(p => p.category === selectedCategory)
 
     return (
-      projects.map((project) => (
+      filteredProjects.map((project) => (
         <a key={project.id} href={`/projects/${project.id}`}>
           <div className={styles.card}>
             <Image
@@ -16,10 +21,11 @@ export default function Projects() {
               alt={`Image for ${project.name}`}
               width={500}
               height={500}
+              style={{objectFit: "contain"}}
             />
             <div className={styles.cardText}>
-              <h3>{project.name}</h3>
-              <p>{project.description}</p>
+              <h3>{project.name} - {project.short}</h3>
+              <p>{project.techStack}</p>
             </div>
           </div>
         </a>
@@ -35,9 +41,13 @@ export default function Projects() {
       </header>
       <main className={styles.main}>
         <div className={styles.filter}>
-          <a className={styles.active} aria-selected={true}>All</a>
-          <a>Website</a>
-          <a>App</a>
+          {categories.map((category) => (
+            <a key={category} className={selectedCategory === category ? styles.active : ''}
+               onClick={() => setSelectedCategory(category)}
+            >
+              {category}
+            </a>
+          ))}
         </div>
         <div className={styles.projects}>
           {renderAllProjects()}

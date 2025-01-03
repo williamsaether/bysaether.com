@@ -3,7 +3,7 @@
 import Image from "next/image";
 import common from "./common.module.css";
 import styles from "./page.module.css";
-import codeCore from '@/data/projects/codecore.json';
+import projects from "@/data/projects";
 
 export default function Home() {
   return (
@@ -31,10 +31,10 @@ export default function Home() {
           </header>
           <div className={styles.gridHalf}>
             <div className={styles.cardWrapper}>
-              <a href={`/projects/${codeCore.id}`}>
+              <a href={`/projects/${projects[0].id}`}>
                 <div className={styles.card}>
                   <Image
-                    src={codeCore.logoURL}
+                    src={projects[0].logoURL}
                     alt="CodeCore Logo"
                     width={500}
                     height={500}
@@ -42,8 +42,8 @@ export default function Home() {
                     placeholder={"empty"}
                   />
                   <div className={styles.cardText}>
-                    <h3>{codeCore.name}</h3>
-                    <p>{codeCore.description}</p>
+                    <h3>{projects[0].name}</h3>
+                    <p>{projects[0].description}</p>
                   </div>
                 </div>
               </a>
