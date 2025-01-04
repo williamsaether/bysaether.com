@@ -5,7 +5,7 @@
 }
 
 .page {
-
+    margin: 0 4rem;
 }
 
 .header {
@@ -38,7 +38,49 @@
     opacity: .8;
 }
 
+.appStore {
+    display: flex;
+    flex-direction: row;
+    gap: .4rem;
+    margin-top: 1.5rem;
+}
+
 .rightSide img {
     width: 15rem;
     height: inherit;
+}
+
+.main {
+    width: 70%;
+    margin: 4rem 0 6rem 0;
+    line-height: 1.5;
+}
+
+.main p, .main li {
+    font-size: 1.2rem;
+}
+
+.main h2 {
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: .8rem;
+}
+
+.main ul {
+    margin-left: 2rem;
+}
+
+.screenshots {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 1rem;
+    height: 50svh;
+    margin-top: 4rem;
+}
+
+.screenshots img {
+    height: 100%;
+    width: auto;
+    border-radius: 1rem;
 }

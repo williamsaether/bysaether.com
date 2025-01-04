@@ -13,7 +13,7 @@ const projects = [
     "squareLogoURL": "/images/codecore/logo.svg",
     "websiteLink": "https://codecore.bysaether.com",
     "appStore": {
-      "apple": "",
+      "apple": "/",
       "google": ""
     },
     "details": {
@@ -24,7 +24,7 @@ const projects = [
         "Pin your most-used codes for quick access.",
         "Open codes directly in supported websites, alternatively with device browser."
       ],
-      "goals": "CodeCore was created with users in mind. It's a user-friendly, efficient, and visually appealing tool."
+      "goals": "CodeCore was created with users in mind. It's a user-friendly, efficient, and visually appealing tool. And unlike other similar apps, we don't push ads in your face."
     },
     "screenshots": [
 

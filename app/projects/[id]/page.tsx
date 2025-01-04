@@ -23,6 +23,26 @@ export default async function Project({ params }: {params: Promise<{ id: string 
             </p>
             <a href={project.websiteLink}>{project.websiteLink.split('://')[1]}</a>
           </div>
+          {project.appStore && <div className={styles.appStore}>
+            {project.appStore.apple && <a href={project.appStore.apple}>
+              <Image
+                src={'/images/appstore/apple.svg'}
+                alt={`Apple App Store Link`}
+                width={180}
+                height={53}
+                style={{objectFit: "contain"}}
+              />
+            </a>}
+            {project.appStore.google && <a href={project.appStore.google}>
+              <Image
+                src={'/images/appstore/google.svg'}
+                alt={`Google Play Link`}
+                width={180}
+                height={53}
+                style={{objectFit: "contain"}}
+              />
+            </a>}
+          </div>}
         </div>
         <div className={styles.rightSide}>
           <Image
@@ -34,6 +54,29 @@ export default async function Project({ params }: {params: Promise<{ id: string 
           />
         </div>
       </header>
+      <main className={styles.main}>
+        <p>{project.details.overview}</p>
+        <h2>Features</h2>
+        <ul>
+          {project.details.features.map((feature, index) => (
+            <li key={index}>{feature}</li>
+          ))}
+        </ul>
+        <h2>Goal</h2>
+        <p>{project.details.goals}</p>
+        {project.screenshots.length > 0 && <div className={styles.screenshots}>
+          {project.screenshots.map((screenshot, index) => (
+            <Image
+              key={index}
+              src={screenshot}
+              alt={`Screenshot of application`}
+              height={1920}
+              width={1080}
+              style={{objectFit: "contain"}}
+            />
+          ))}
+        </div>}
+      </main>
     </div>
   )
 }
