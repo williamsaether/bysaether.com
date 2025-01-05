@@ -3,7 +3,6 @@ import Image from "next/image";
 import styles from './project.module.css'
 import Link from "next/link";
 
-
 export default async function Project({ params }: {params: Promise<{ id: string }>}) {
   const { id } = await params;
   const project = projects.find(p => p.id === id);

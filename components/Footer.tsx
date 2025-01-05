@@ -30,9 +30,9 @@ export default function Footer() {
           <h4>LINKS</h4>
           <nav>
             <Link href={'/'}>HOME</Link>
-            <Link href={''}>ABOUT</Link>
+            <Link href={'/about'}>ABOUT</Link>
             <Link href={'/projects'}>PROJECTS</Link>
-            <Link href={'/support'}>CONTACT</Link>
+            <Link href={'/contact'}>CONTACT</Link>
           </nav>
         </div>
         <div className={styles.part}>
