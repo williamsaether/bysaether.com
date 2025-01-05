@@ -1,6 +1,7 @@
 import projects from "@/data/projects";
 import Image from "next/image";
 import styles from './project.module.css'
+import Link from "next/link";
 
 
 export default async function Project({ params }: {params: Promise<{ id: string }>}) {
@@ -11,10 +12,21 @@ export default async function Project({ params }: {params: Promise<{ id: string 
 
   return (
     <div className={styles.page}>
-
       <header className={styles.header}>
         <div className={styles.leftSide}>
           <span id="intersector"/>
+          <Link href={"/projects"}>
+            <div className={styles.arrowBack}>
+              <Image
+                src={'/images/icons/arrowback.svg'}
+                alt={"Go back arrow"}
+                width={123}
+                height={108}
+                style={{objectFit: "contain"}}
+                priority
+              />
+            </div>
+          </Link>
           <h1>{project.name}</h1>
           <p>{project.description}</p>
           <div className={styles.otherInfo}>
@@ -51,6 +63,7 @@ export default async function Project({ params }: {params: Promise<{ id: string 
             width={500}
             height={500}
             style={{objectFit: "contain"}}
+            priority
           />
         </div>
       </header>

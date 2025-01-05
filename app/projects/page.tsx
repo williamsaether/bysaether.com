@@ -16,16 +16,18 @@ export default function Projects() {
       filteredProjects.map((project) => (
         <a key={project.id} href={`/projects/${project.id}`}>
           <div className={styles.card}>
-            <Image
-              src={project.logoURL}
-              alt={`Image for ${project.name}`}
-              width={500}
-              height={500}
-              style={{objectFit: "contain"}}
-            />
+            <div className={styles.imageWrapper}>
+              <Image
+                src={project.logoURL}
+                alt={`Image for ${project.name}`}
+                width={500}
+                height={500}
+                style={{objectFit: "contain"}}
+              />
+            </div>
             <div className={styles.cardText}>
               <h3>{project.name} - {project.short}</h3>
-              <p>{project.techStack}</p>
+              <p>{project.techStack.join(', ')}</p>
             </div>
           </div>
         </a>

@@ -3,7 +3,7 @@ const projects = [
     "id": "codecore",
     "category": "App",
     "name": "CodeCore",
-    "short": "A QR code and Barcode app",
+    "short": "A QR and Barcode App",
     "description": "A barcode and QR code scanning app for organizing, saving, and accessing codes effortlessly.",
     "techStack": [
       "React Native",
@@ -11,9 +11,9 @@ const projects = [
     ],
     "logoURL": "/images/codecore/logo.svg",
     "squareLogoURL": "/images/codecore/logo.svg",
-    "websiteLink": "https://codecore.bysaether.com",
+    "websiteLink": "",
     "appStore": {
-      "apple": "/",
+      "apple": "",
       "google": ""
     },
     "details": {
