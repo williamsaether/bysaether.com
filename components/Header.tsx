@@ -55,7 +55,7 @@ export default function Header() {
             rel="noopener noreferrer"
           >
             <Image
-              src="/images/icons/linkedin.svg"
+              src="/images/icons/linkedin-s.svg"
               alt="LinkedIn"
               width={30}
               height={30}
@@ -68,7 +68,7 @@ export default function Header() {
             rel="noopener noreferrer"
           >
             <Image
-              src="/images/icons/instagram.svg"
+              src="/images/icons/instagram-s.svg"
               alt="Instagram"
               width={30}
               height={30}
@@ -81,7 +81,7 @@ export default function Header() {
             rel="noopener noreferrer"
           >
             <Image
-              src="/images/icons/github.svg"
+              src="/images/icons/github-s.svg"
               alt="GitHub"
               width={30}
               height={30}

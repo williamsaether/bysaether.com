@@ -74,7 +74,7 @@ export default function About() {
                 <div className={styles.socials}>
                   <a href={'https://www.linkedin.com/in/williamsaether/'}>
                     <Image
-                      src={'/images/icons/linkedin.svg'}
+                      src={'/images/icons/linkedin-s.svg'}
                       alt={'LinkedIn'}
                       width={30}
                       height={30}
@@ -82,7 +82,7 @@ export default function About() {
                   </a>
                   <a href={'https://github.com/williamsaether'}>
                     <Image
-                      src={'/images/icons/github.svg'}
+                      src={'/images/icons/github-s.svg'}
                       alt={'GitHub'}
                       width={30}
                       height={30}

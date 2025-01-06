@@ -4,6 +4,7 @@ import Image from "next/image";
 import common from "./common.module.css";
 import styles from "./page.module.css";
 import projects from "@/data/projects";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -18,8 +19,14 @@ export default function Home() {
             height={1344}
             priority
           />
-          <h1>Simple Solutions, Big Impact</h1>
-          <p>Turning everyday problems into digital possibilities.</p>
+          <p className={styles.title}>Hi! Thanks for stopping by.</p>
+          <p className={styles.intro}>
+            At BySaether, we strive to create user-friendly and innovative software solutions. Our mission is
+            to bring ideas to life, one project at a time, while staying committed to quality and creativity.
+          </p>
+          <div className={common.ctas}>
+            <Link href={'/projects'} className={`${common.primary} ${common.primaryDark}`}>Explore Our Work</Link>
+          </div>
         </div>
         <span id="intersector"/>
         <section className={styles.section}>

@@ -26,9 +26,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 1.2rem;
   line-height: 20px;
   font-weight: 500;
+}
+
+a.primaryDark {
+  background: #171717 !important;
+  color: #f8f8f8 !important;
 }
 
 a.primary, button.primary {
@@ -52,6 +57,11 @@ a.secondary, button.secondary {
 @media (hover: hover) and (pointer: fine) {
   a.primary:hover {
     background: var(--button-primary-hover);
+    border-color: transparent;
+  }
+
+  a.primaryDark:hover {
+    background: #101010 !important;
     border-color: transparent;
   }
 
