@@ -42,6 +42,7 @@ export default function Header() {
         </button>
         <Link href={'/'}>
           <Image
+            className={styles.logo}
             src="/images/bysaether.svg"
             alt="BySaether Logo"
             width={295}
@@ -50,6 +51,11 @@ export default function Header() {
             priority
           />
         </Link>
+        <nav className={styles.menu}>
+          <Link className={`${styles.navLink} ${isOpen ? styles.activeNav : ''}`} href={'/'}>About</Link>
+          <Link className={`${styles.navLink} ${isOpen ? styles.activeNav : ''}`} href={'/about'}>Projects</Link>
+          <Link className={`${styles.navLink} ${isOpen ? styles.activeNav : ''}`} href={'/about'}>Contact</Link>
+        </nav>
         <div className={styles.socials}>
           <a
             href={'https://www.linkedin.com/company/bysaether/'}
@@ -92,10 +98,6 @@ export default function Header() {
           </a>
         </div>
       </div>
-      <nav className={styles.menu}>
-        <Link className={`${styles.navLink} ${isOpen ? styles.activeNav : ''}`} href={'/'}>Home</Link>
-        <Link className={`${styles.navLink} ${isOpen ? styles.activeNav : ''}`} href={'/about'}>About</Link>
-      </nav>
     </header>
   )
 }
