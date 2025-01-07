@@ -1,8 +1,17 @@
+.outerFooter {
+    width: 100%;
+    background-color: #141414;
+}
+
 .footer {
     width: 100%;
-    padding: 3rem 8rem 0;
+    padding: 5rem 8rem;
     color: #ededed;
-    background-color: #141414;
+
+    display: grid;
+    grid-template-columns: min-content auto;
+    grid-template-rows: auto 2px auto;
+    grid-row-gap: 3rem;
 }
 
 .footer a:hover {
@@ -10,21 +19,55 @@
     text-underline-offset: 4px;
 }
 
-.wrapper {
+.leftSide {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
     display: grid;
-    grid-template-columns: 4fr 2fr 2fr 3fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 4rem;
+}
+
+.rightSide {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.bottomLeft {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    grid-column-gap: 4rem;
-    margin-bottom: 2rem
+    gap: 4rem;
+    text-transform: uppercase;
+    text-wrap: nowrap;
+    font-size: .9rem;
+}
+
+.logo {
+    height: 400px;
+    width: auto;
 }
 
 .footer > span {
-    content: '';
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
     display: block;
     width: 100%;
-    height: 2px;
-    border-radius: 2px;
-    background: #ededed;
+    height: 100%;
+    border-radius: 6px;
+    background: rgba(237, 237, 237, 0.1);
 }
 
 .footer > p {
@@ -32,29 +75,36 @@
     text-align: center;
 }
 
-.part {
-    display: flex;
-    flex-direction: column;
-}
-
-.part > h4 {
-    font-size: 1.2rem;
+.footer h4 {
+    font-size: 1.6rem;
     font-weight: 600;
     margin-bottom: .8rem;
 }
 
-.part > nav {
+.footer nav {
     display: flex;
     flex-direction: column;
-    grid-gap: .4rem;
+    gap: .4rem;
 }
 
-.part > img {
-    height: 50px;
-    width: 50px;
-    margin-bottom: 1rem
+.footer nav a {
+    width: min-content;
+    text-wrap: nowrap;
 }
 
-.part > p {
+.socials {
+    gap: .6rem !important;
+}
 
+.socials a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .6rem;
+    line-height: 1.1rem;
+}
+
+.socials img {
+    width: 25px;
+    height: auto;
 }

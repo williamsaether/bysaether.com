@@ -3,45 +3,83 @@
 import Image from 'next/image'
 import Link from "next/link";
 import styles from "./Footer.module.css";
-import {supportEmail} from "@/constants/Constants";
+import {github, instagram, linkedin, supportEmail} from "@/constants/Constants";
 
 export default function Footer() {
 
   return (
-    <footer className={styles.footer}>
-      <div className={styles.wrapper}>
-        <div className={styles.part}>
+    <footer className={styles.outerFooter}>
+      <div className={styles.footer}>
+        <div className={styles.leftSide}>
+          <div className={styles.part}>
+            <h4>Site</h4>
+            <nav>
+              <Link href={'/'}>Home</Link>
+              <Link href={'/about'}>About</Link>
+              <Link href={'/projects'}>Projects</Link>
+              <Link href={'/contact'}>Contact</Link>
+            </nav>
+          </div>
+          <div className={styles.part}>
+            <h4>Legal</h4>
+            <nav>
+              <Link href={'/'}>Privacy policy</Link>
+              {/*<Link href={'/'}>Cookie policy</Link>*/}
+            </nav>
+          </div>
+          <div className={styles.part}>
+            <h4>Social</h4>
+            <nav className={styles.socials}>
+              <a href={linkedin}>
+                <Image
+                  src="/images/icons/linkedin.svg"
+                  alt="LinkedIn"
+                  width={30}
+                  height={30}
+                />
+                <p>LinkedIn</p>
+              </a>
+              <a href={instagram}>
+                <Image
+                  src="/images/icons/instagram.svg"
+                  alt="Instagram"
+                  width={30}
+                  height={30}
+                />
+                <p>Instagram</p>
+              </a>
+              <a href={github}>
+                <Image
+                  src="/images/icons/github.svg"
+                  alt="GitHub"
+                  width={30}
+                  height={30}
+                />
+                <p>GitHub</p>
+              </a>
+            </nav>
+          </div>
+          <div className={styles.part}>
+            <h4>Contact</h4>
+            <a href={'mailto:bysaether@gmail.com'}>{supportEmail}</a>
+          </div>
+        </div>
+        <div className={styles.rightSide}>
           <Image
+            className={styles.logo}
             src="/images/bysaether-short.svg"
             alt="BySaether Logo"
-            width={100}
-            height={100}
-            style={{objectFit: "contain", transform: 'translate(3px,4px)'}}
-            loading="lazy"
+            width={500}
+            height={500}
+            style={{objectFit: "contain"}}
           />
-          <p>BySaether makes genius solutions for everyday life. Learn more about us here</p>
         </div>
-        <div className={styles.part}>
-          <h4>OWNER</h4>
-          <p></p>
-          <p className={styles.email}>{supportEmail}</p>
-        </div>
-        <div className={styles.part}>
-          <h4>LINKS</h4>
-          <nav>
-            <Link href={'/'}>HOME</Link>
-            <Link href={'/about'}>ABOUT</Link>
-            <Link href={'/projects'}>PROJECTS</Link>
-            <Link href={'/contact'}>CONTACT</Link>
-          </nav>
-        </div>
-        <div className={styles.part}>
-          <h4>CONTACT</h4>
-          <p>William Sæther</p>
+        <span/>
+        <div className={styles.bottomLeft}>
+          <p>&copy; 2025 BySaether</p>
+          <p>All Rights Reserved</p>
         </div>
       </div>
-      <span/>
-      <p>&copy; 2025 BySaether (William Sæther) - All Rights Reserved</p>
     </footer>
   )
 }

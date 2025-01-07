@@ -44,6 +44,7 @@ const projects = [
     ],
     "logoURL": "/images/bysaether.svg",
     "squareLogoURL": "/images/bysaether-short.svg",
+    "websiteLink": "https://bysaether.com",
     "details": {
       "overview": "The BySaether website serves as the digital portfolio for BySaether, highlighting the company's projects, achievements, and brand identity. The design reflects a clean and professional style, showcasing both functionality and aesthetics.",
       "features": [
