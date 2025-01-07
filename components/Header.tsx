@@ -13,6 +13,8 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
   useEffect(() => {
+    setIsOpen(false)
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsScrolled(!entry.isIntersecting);

@@ -84,12 +84,12 @@ export default function Support() {
         </section>
         <section className={styles.formSection}>
           <header>
-            <h2>Form</h2>
+            <h2>Contact Form</h2>
           </header>
           <div className={styles.formWrapper}>
             <div className={styles.formDesc}>
               <p>
-                Fill in the contact form, and we will reach out to you within 24 hours.
+                Fill in the form, and we will reach out to you within 24 hours.
               </p>
               <p className={styles.smallText}>
                 You can also contact us by the email below!

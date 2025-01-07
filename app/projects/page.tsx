@@ -6,11 +6,11 @@ import styles from './projects.module.css'
 import {useState} from "react";
 
 export default function Projects() {
-  const categories = ["All", "Website", "App"]
+  const categories = ["All", "Website", "App", "Design"]
   const [selectedCategory, setSelectedCategory] = useState<string>(categories[0]);
 
   const renderAllProjects = () => {
-    const filteredProjects = selectedCategory === 'All' ? projects : projects.filter(p => p.category === selectedCategory)
+    const filteredProjects = selectedCategory === 'All' ? projects : projects.filter(p => p.categories.includes(selectedCategory))
 
     return (
       filteredProjects.map((project) => (

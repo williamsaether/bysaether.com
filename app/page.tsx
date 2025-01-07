@@ -37,24 +37,21 @@ export default function Home() {
             </div>
           </header>
           <div className={styles.gridHalf}>
-            <div className={styles.cardWrapper}>
-              <a href={`/projects/${projects[0].id}`}>
-                <div className={styles.card}>
-                  <Image
-                    src={projects[0].logoURL}
-                    alt="CodeCore Logo"
-                    width={500}
-                    height={500}
-                    loading={"lazy"}
-                    placeholder={"empty"}
-                  />
-                  <div className={styles.cardText}>
-                    <h3>{projects[0].name}</h3>
-                    <p>{projects[0].description}</p>
-                  </div>
+            <a href={`/projects/${projects[0].id}`}>
+              <div className={styles.card}>
+                <Image
+                  src={projects[0].logoURL}
+                  alt="CodeCore Logo"
+                  width={500}
+                  height={500}
+                  placeholder={"empty"}
+                />
+                <div className={styles.cardText}>
+                  <h3>{projects[0].name}</h3>
+                  <p>{projects[0].description}</p>
                 </div>
-              </a>
-            </div>
+              </div>
+            </a>
           </div>
         </section>
       </main>
