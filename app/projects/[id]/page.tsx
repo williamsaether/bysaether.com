@@ -32,7 +32,7 @@ export default async function Project({ params }: {params: Promise<{ id: string 
             <p className={styles.techStack}>
               {project.techStack.join(', ')}
             </p>
-            <a href={project.websiteLink}>{project.websiteLink.split('://')[1]}</a>
+            <a href={project.websiteLink}>{project.websiteLink?.split('://')[1]}</a>
           </div>
           {project.appStore && <div className={styles.appStore}>
             {project.appStore.apple && <a href={project.appStore.apple}>
@@ -68,15 +68,26 @@ export default async function Project({ params }: {params: Promise<{ id: string 
       </header>
       <main className={styles.main}>
         <p>{project.details.overview}</p>
-        <h2>Features</h2>
-        <ul>
-          {project.details.features.map((feature, index) => (
-            <li key={index}>{feature}</li>
+        {project.details.features && <>
+          <h2>Features</h2>
+          <ul>
+            {project.details.features.map((feature, index) => (
+              <li key={index}>{feature}</li>
           ))}
-        </ul>
-        <h2>Goal</h2>
-        <p>{project.details.goals}</p>
-        {project.screenshots.length > 0 && <div className={styles.screenshots}>
+         </ul>
+        </>}
+        {project.details.goals && <>
+          <h2>Goal</h2>
+          <p>{project.details.goals}</p>
+        </>}
+        {project.details.design && <>
+          <div className={styles.design}>
+            {project.details.design.primaryColors.map((color, index) => (
+              <div key={index} style={{backgroundColor: color}}/>
+            ))}
+          </div>
+        </>}
+        {project.screenshots && project.screenshots.length > 0 && <div className={styles.screenshots}>
           {project.screenshots.map((screenshot, index) => (
             <Image
               key={index}

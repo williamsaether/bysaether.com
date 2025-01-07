@@ -83,6 +83,20 @@
     margin-left: 2rem;
 }
 
+.design {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.design > div {
+    width: 100px;
+    height: 100px;
+    border-radius: 1rem;
+}
+
 .screenshots {
     display: flex;
     flex-direction: row;
