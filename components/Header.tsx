@@ -2,12 +2,14 @@
 
 import Image from 'next/image'
 import Link from "next/link";
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import styles from "./Header.module.css";
 import { usePathname } from "next/navigation";
+import {github, instagram, linkedin} from "@/constants/Constants";
 
 export default function Header() {
   const pathname = usePathname();
+  const isHomePage = pathname === '/'
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
@@ -33,7 +35,7 @@ export default function Header() {
   }
 
   return (
-    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
+    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''} ${isOpen ? styles.dropdown : ''} ${isHomePage ? styles.homepage : ''}`}>
       <div className={styles.navbar}>
         <button className={styles.burger} onClick={toggleMenu} aria-label="Toggle Menu">
           <span className={`${styles.line} ${isOpen ? styles.line1 : ''}`}></span>
@@ -52,13 +54,13 @@ export default function Header() {
           />
         </Link>
         <nav className={styles.menu}>
-          <Link className={`${styles.navLink} ${isOpen ? styles.activeNav : ''}`} href={'/'}>About</Link>
-          <Link className={`${styles.navLink} ${isOpen ? styles.activeNav : ''}`} href={'/about'}>Projects</Link>
-          <Link className={`${styles.navLink} ${isOpen ? styles.activeNav : ''}`} href={'/about'}>Contact</Link>
+          <Link className={`${styles.navLink} ${isOpen ? styles.activeNav : ''}`} href={'/about'}>About</Link>
+          <Link className={`${styles.navLink} ${isOpen ? styles.activeNav : ''}`} href={'/projects'}>Projects</Link>
+          <Link className={`${styles.navLink} ${isOpen ? styles.activeNav : ''}`} href={'/contact'}>Contact</Link>
         </nav>
         <div className={styles.socials}>
           <a
-            href={'https://www.linkedin.com/company/bysaether/'}
+            href={linkedin}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -71,7 +73,7 @@ export default function Header() {
             />
           </a>
           <a
-            href={'https://www.instagram.com/bysaether/'}
+            href={instagram}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -84,7 +86,7 @@ export default function Header() {
             />
           </a>
           <a
-            href={'https://github.com/BySaether'}
+            href={github}
             target="_blank"
             rel="noopener noreferrer"
           >

@@ -20,11 +20,7 @@ export const metadata: Metadata = {
   description: "Developing software products - William Sæther",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({children}: Readonly<{children: React.ReactNode; }>) {
   return (
     <ThemeProvider>
       <html lang="en">
