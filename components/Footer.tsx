@@ -30,7 +30,11 @@ export default function Footer() {
           <div className={styles.part}>
             <h4>Social</h4>
             <nav className={styles.socials}>
-              <a href={linkedin}>
+              <a
+                href={linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Image
                   src="/images/icons/linkedin.svg"
                   alt="LinkedIn"
@@ -48,7 +52,11 @@ export default function Footer() {
                 />
                 <p>Instagram</p>
               </a>
-              <a href={github}>
+              <a
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Image
                   src="/images/icons/github.svg"
                   alt="GitHub"
@@ -61,7 +69,11 @@ export default function Footer() {
           </div>
           <div className={styles.part}>
             <h4>Contact</h4>
-            <a href={'mailto:bysaether@gmail.com'}>{supportEmail}</a>
+            <a
+              href={'mailto:bysaether@gmail.com'}
+              target="_blank"
+              rel="noopener noreferrer"
+            >{supportEmail}</a>
           </div>
         </div>
         <div className={styles.rightSide}>

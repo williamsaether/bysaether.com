@@ -32,7 +32,11 @@ export default async function Project({ params }: {params: Promise<{ id: string 
             <p className={styles.techStack}>
               {project.techStack.join(', ')}
             </p>
-            <a href={project.websiteLink}>{project.websiteLink?.split('://')[1]}</a>
+            <a
+              href={project.websiteLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >{project.websiteLink?.split('://')[1]}</a>
           </div>
           {project.appStore && <div className={styles.appStore}>
             {project.appStore.apple && <a href={project.appStore.apple}>

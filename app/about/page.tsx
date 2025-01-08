@@ -30,6 +30,7 @@ export default function About() {
           height={80}
           width={80}
           onClick={scrollToTeam}
+          priority
         />
       </header>
       <span className={styles.teamScroll} ref={teamSection}/>
@@ -72,7 +73,11 @@ export default function About() {
                   style={{objectFit: "contain"}}
                 />
                 <div className={styles.socials}>
-                  <a href={'https://www.linkedin.com/in/williamsaether/'}>
+                  <a
+                    href={'https://www.linkedin.com/in/williamsaether/'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Image
                       src={'/images/icons/linkedin-s.svg'}
                       alt={'LinkedIn'}
@@ -80,7 +85,11 @@ export default function About() {
                       height={30}
                     />
                   </a>
-                  <a href={'https://github.com/williamsaether'}>
+                  <a
+                    href={'https://github.com/williamsaether'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Image
                       src={'/images/icons/github-s.svg'}
                       alt={'GitHub'}

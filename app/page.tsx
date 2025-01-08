@@ -37,7 +37,7 @@ export default function Home() {
             </div>
           </header>
           <div className={styles.gridHalf}>
-            <a href={`/projects/${projects[0].id}`}>
+            <Link href={`/projects/${projects[0].id}`}>
               <div className={styles.card}>
                 <Image
                   src={projects[0].logoURL}
@@ -51,7 +51,7 @@ export default function Home() {
                   <p>{projects[0].description}</p>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
         </section>
       </main>

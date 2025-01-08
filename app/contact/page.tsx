@@ -39,7 +39,11 @@ export default function Support() {
                   <p>We're basically always active, come have a chat!</p>
                 </div>
                 <div className={common.ctas}>
-                  <a href={'https://discord.gg/GxcPtwvX4P'} target={'_blank'} className={common.primary}>Join</a>
+                  <a
+                    href={'https://discord.gg/GxcPtwvX4P'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={common.primary}>Join</a>
                 </div>
               </div>
             </div>
@@ -57,7 +61,11 @@ export default function Support() {
                   <p>Most of our repos are private for now, but will soon be more open sourced projects!</p>
                 </div>
                 <div className={common.ctas}>
-                  <a href={'https://github.com/BySaether'} target={'_blank'} className={common.primary}>Open</a>
+                  <a
+                    href={'https://github.com/BySaether'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={common.primary}>Open</a>
                 </div>
               </div>
             </div>
