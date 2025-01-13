@@ -18,7 +18,7 @@ export default function Projects() {
           <div className={styles.card}>
             <div className={styles.imageWrapper}>
               <Image
-                src={project.logoURL}
+                src={project.showURL}
                 alt={`Image for ${project.name}`}
                 width={500}
                 height={500}

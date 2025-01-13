@@ -11,9 +11,10 @@ const projects = [
     ],
     "logoURL": "/images/codecore/logo.svg",
     "squareLogoURL": "/images/codecore/logo.svg",
+    "showURL": '/images/codecore/overview.webp',
     "websiteLink": "",
     "appStore": {
-      "apple": "/",
+      "apple": "",
       "google": ""
     },
     "details": {
@@ -27,7 +28,11 @@ const projects = [
       "goals": "CodeCore was created with users in mind. It's a user-friendly, efficient, and visually appealing tool. And unlike other scanning apps, we don't push ads in your face."
     },
     "screenshots": [
-
+      '/images/codecore/screenshots/home.webp',
+      '/images/codecore/screenshots/mycodes.webp',
+      '/images/codecore/screenshots/scanner.webp',
+      '/images/codecore/screenshots/history.webp',
+      '/images/codecore/screenshots/settings.webp',
     ]
   },
   {
@@ -44,6 +49,7 @@ const projects = [
     ],
     "logoURL": "/images/bysaether.svg",
     "squareLogoURL": "/images/bysaether-short.svg",
+    "showURL": "/images/bysaether.svg",
     "websiteLink": "https://bysaether.com",
     "details": {
       "overview": "The BySaether website serves as the digital portfolio for BySaether, highlighting the company's projects, achievements, and brand identity. The design reflects a clean and professional style, showcasing both functionality and aesthetics.",

@@ -40,11 +40,12 @@ export default function Home() {
             <Link href={`/projects/${projects[0].id}`}>
               <div className={styles.card}>
                 <Image
-                  src={projects[0].logoURL}
+                  src={projects[0].showURL}
                   alt="CodeCore Logo"
                   width={500}
                   height={500}
                   placeholder={"empty"}
+                  quality={100}
                 />
                 <div className={styles.cardText}>
                   <h3>{projects[0].name}</h3>
