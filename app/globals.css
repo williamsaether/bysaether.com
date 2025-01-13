@@ -59,6 +59,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--darkerground);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--highlight);
+  border-radius: 20px;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -91,6 +106,23 @@ body > div > header {
 
 body > div > header > h1 {
   font-size: 4rem;
+}
+
+@media (max-width: 600px) {
+  body > div > header > h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 400px) {
+  body > div > header {
+    margin-top: 10rem;
+  }
+
+
+  body > div > header > h1 {
+    font-size: 2rem;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

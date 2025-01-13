@@ -10,25 +10,27 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <div className={styles.front}>
-          <Image
-            src="/images/banner.svg"
-            alt="Background banner"
-            className={styles.background}
-            width={3000}
-            height={1344}
-            priority
-          />
-          <p className={styles.title}>Hi! Thanks for stopping by.</p>
-          <p className={styles.intro}>
-            At BySaether, we strive to create user-friendly and innovative software solutions. Our mission is
-            to bring ideas to life, one project at a time, while staying committed to quality and creativity.
-          </p>
-          <div className={common.ctas}>
-            <Link href={'/projects'} className={`${common.primary} ${common.primaryDark}`}>Explore Our Work</Link>
+        <section className={styles.frontSection}>
+          <div className={styles.front}>
+            <Image
+              src="/images/banner.svg"
+              alt="Background banner"
+              className={styles.background}
+              width={3000}
+              height={1344}
+              priority
+            />
+            <p className={styles.title}>Hi! Thanks for stopping by.</p>
+            <p className={styles.intro}>
+              At BySaether, we strive to create user-friendly and innovative software solutions. Our mission is
+              to bring ideas to life, one project at a time, while staying committed to quality and creativity.
+            </p>
+            <div className={common.ctas}>
+              <Link href={'/projects'} className={`${common.primary} ${common.primaryDark}`}>Explore Our Work</Link>
+            </div>
           </div>
-        </div>
-        <span id="intersector"/>
+        </section>
+        <span id="intersector" className={styles.intersector}/>
         <section className={styles.section}>
           <header>
             <h2>Projects</h2>
@@ -36,7 +38,7 @@ export default function Home() {
               <a className={common.primary} href={'/projects'}>All Projects</a>
             </div>
           </header>
-          <div className={styles.gridHalf}>
+          <div className={styles.projectGrid}>
             <Link href={`/projects/${projects[0].id}`}>
               <div className={styles.card}>
                 <Image

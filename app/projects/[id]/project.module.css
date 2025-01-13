@@ -13,6 +13,7 @@
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    gap: 2rem;
 }
 
 .arrowBack {
@@ -30,10 +31,6 @@
 
 .leftSide h1 {
     font-size: 4rem;
-}
-
-.leftSide p {
-
 }
 
 .leftSide a {
@@ -102,15 +99,51 @@
     flex-direction: row;
     justify-content: left;
     gap: 1rem;
-    height: 50svh;
-    margin-top: 4rem;
+    height: calc(50svh + 12px);
+    margin: 4rem 0;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .screenshots img {
-    height: 100%;
+    height: calc(100% - 12px);
     width: auto;
     border-radius: 1rem;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 900px) {
+    .main {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .leftSide h1 {
+        font-size: 3rem;
+    }
+    .leftSide p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+    }
+    .rightSide {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 450px) {
+    .main h2 {
+        font-size: 1.8rem;
+    }
+    .main p, .main li {
+        font-size: 1rem;
+    }
 }
 
 @media(prefers-color-scheme: dark) {

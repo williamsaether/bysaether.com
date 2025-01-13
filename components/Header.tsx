@@ -9,7 +9,6 @@ import {github, instagram, linkedin} from "@/constants/Constants";
 
 export default function Header() {
   const pathname = usePathname();
-  const isHomePage = pathname === '/'
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
@@ -35,7 +34,7 @@ export default function Header() {
   }
 
   return (
-    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''} ${isOpen ? styles.dropdown : ''} ${isHomePage ? styles.homepage : ''}`}>
+    <header className={`${styles.header}${isScrolled ? ' ' + styles.scrolled : ''}${isOpen ? ' ' + styles.dropdown : ''}`}>
       <div className={styles.navbar}>
         <button className={styles.burger} onClick={toggleMenu} aria-label="Toggle Menu">
           <span className={`${styles.line} ${isOpen ? styles.line1 : ''}`}></span>

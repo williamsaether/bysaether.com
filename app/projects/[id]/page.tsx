@@ -91,19 +91,20 @@ export default async function Project({ params }: {params: Promise<{ id: string 
             ))}
           </div>
         </>}
-        {project.screenshots && project.screenshots.length > 0 && <div className={styles.screenshots}>
-          {project.screenshots.map((screenshot, index) => (
+      </main>
+      {project.screenshots && project.screenshots.length > 0 && <div className={styles.screenshots}>
+        {project.screenshots.map((screenshot, index) => (
+          <div key={index}>
             <Image
-              key={index}
               src={screenshot}
               alt={`Screenshot of application`}
               height={1920}
               width={1080}
               style={{objectFit: "contain"}}
             />
-          ))}
-        </div>}
-      </main>
+          </div>
+        ))}
+      </div>}
     </div>
   )
 }

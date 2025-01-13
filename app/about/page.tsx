@@ -58,7 +58,7 @@ export default function About() {
                 <p className={styles.text}>
                   Outside of software development, I have a passion for content creation, whether that is filming drone
                   footage or editing videos for clients.
-                  When I&#39;m not coding, or behind the camera you&#39;ll find me exploring Norway&#39;s stunning
+                  When I&#39;m not coding or behind the camera, you&#39;ll find me exploring Norway&#39;s stunning
                   landscapes or relaxing with a good video game.
                 </p>
               </div>

@@ -58,8 +58,11 @@
 }
 
 .formSection > header {
-    font-size: 2rem;
     margin-bottom: 2rem;
+}
+
+.formSection > header > h2 {
+    font-size: 3rem;
 }
 
 .formWrapper {
@@ -135,3 +138,76 @@
 textarea.formInput {
     min-height: 10rem;
 }
+
+@media (max-width: 1600px) {
+    .box {
+        min-width: 18rem;
+        width: 25rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .boxDesc h2 {
+        font-size: 1.2rem;
+    }
+    .boxDesc p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    .boxWrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 3rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .boxWrapper {
+        grid-template-columns: 1fr;
+    }
+    .box {
+        width: 30rem;
+        margin: auto;
+    }
+
+    .formWrapper {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        gap: 3rem;
+    }
+
+    .formDesc {
+        gap: 1rem;
+    }
+
+    .contactInfo > div p, .contactInfo > div a {
+        font-size: 1rem !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .box {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .form button {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 450px) {
+    .formSection h2 {
+        font-size: 2.5rem !important;
+    }
+
+    .formDesc {
+        margin-top: 0;
+    }
+    .formDesc p {
+        font-size: 1.2rem;
+    }
+}
+
