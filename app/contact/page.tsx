@@ -5,14 +5,35 @@ import styles from './contact.module.css'
 import Image from "next/image";
 import Form from "next/form";
 import Link from "next/link";
-import {useRef} from "react";
+import {FormEvent, useRef, useState} from "react";
 
 export default function Support() {
   const formSection = useRef(null);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const scrollToForm = () => {
     // @ts-ignore
     formSection.current?.scrollIntoView({behavior: "smooth"})
+  }
+
+  const onSubmit = async (e: FormEvent) => {
+    e.preventDefault()
+
+    try {
+      const res = await fetch('/api/contact', {
+        body: JSON.stringify({
+          name, email, message
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        method: "POST",
+      })
+    } catch (err: any) {
+      console.error('Err', err)
+    }
   }
 
   return (
@@ -110,7 +131,7 @@ export default function Support() {
               </div>
             </div>
             <Form id={"contact"} form={"contact"} className={styles.form}
-                  action={''} aria-label={"Contact Form"}
+                  action={''} aria-label={"Contact Form"} onSubmit={onSubmit}
             >
               <div>
                 <div className={styles.horizLabels}>
@@ -120,7 +141,8 @@ export default function Support() {
                 <input className={styles.formInput}
                        name={"name"} id={"contact-name"}
                        maxLength={255} type={"text"}
-                       required
+                       value={name} onChange={e => setName(e.target.value)}
+                       placeholder={"Name Nameless"} required
                 />
               </div>
               <div>
@@ -131,7 +153,8 @@ export default function Support() {
                 <input className={styles.formInput}
                        name={"email"} id={"contact-email"}
                        maxLength={255} type={"email"}
-                       required
+                       value={email} onChange={e => setEmail(e.target.value)}
+                       placeholder={"name@example.com"} required
                 />
               </div>
               <div>
@@ -141,7 +164,9 @@ export default function Support() {
                 </div>
                 <textarea className={styles.formInput}
                           name={"message"} id={"contact-message"}
-                          maxLength={255} required
+                          maxLength={255} value={message}
+                          onChange={e => setMessage(e.target.value)}
+                          placeholder={"Hi, \n\nI was just wondering if ..."} required
                 />
               </div>
               <div className={common.ctas}>
