@@ -1,0 +1,49 @@
+.header p {
+    margin-top: .4rem;
+}
+
+.date {
+    opacity: .7;
+}
+
+.main {
+    margin-bottom: 4rem;
+}
+
+.main h3 {
+    font-size: 1.6rem;
+    margin-top: 2rem;
+}
+
+.main p, .main li {
+    font-size: 1.2rem;
+    margin-top: .4rem;
+}
+
+.main ul {
+    margin-left: 2rem;
+}
+
+@media (max-width: 600px) {
+    .main h3 {
+        font-size: 1.4rem;
+    }
+
+    .main p, .main li {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .main h3 {
+        font-size: 1.2rem;
+    }
+
+    .main p, .main li {
+        font-size: 1rem;
+    }
+
+    .main ul {
+        margin-left: 1.2rem;
+    }
+}

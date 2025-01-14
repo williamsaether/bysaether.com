@@ -23,8 +23,8 @@ export default function Footer() {
           <div className={styles.part}>
             <h4>Legal</h4>
             <nav>
-              <Link href={'/'}>Privacy policy</Link>
-              {/*<Link href={'/'}>Cookie policy</Link>*/}
+              <Link href={'/privacy-policy'}>Privacy policy</Link>
+              <Link href={'/cookie-policy'}>Cookie policy</Link>
             </nav>
           </div>
           <div className={styles.part}>
