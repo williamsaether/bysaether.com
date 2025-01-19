@@ -23,13 +23,13 @@ export default function Support() {
 
     try {
       const res = await fetch('/api/contact', {
-        body: JSON.stringify({
-          name, email, message
-        }),
+        method: "POST",
         headers: {
           'Content-Type': 'application/json',
         },
-        method: "POST",
+        body: JSON.stringify({
+          name, email, message
+        }),
       })
     } catch (err: any) {
       console.error('Err', err)
