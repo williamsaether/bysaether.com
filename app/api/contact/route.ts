@@ -8,7 +8,7 @@ const DOMAIN = process.env.MAILGUN_DOMAIN || ''
 
 export async function POST(req: Request) {
   const mailgun = new Mailgun(formData);
-  const mg = mailgun.client({username: 'api', key: API_KEY});
+  const mg = mailgun.client({username: 'api', key: API_KEY, url: 'https://api.eu.mailgun.net'});
 
   const body = await req.json()
   let {name, email, message} = body
