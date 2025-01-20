@@ -27,28 +27,27 @@ export async function POST(req: Request) {
     mg.messages.create(DOMAIN, {
       from: 'Contact Form <contact@mg.bysaether.com>',
       to: [supportEmail],
-      replyTo: sEmail,
       subject: 'New Contact Form Submission on BySaether.com',
       text: `
-      Hello,
-      
-      You have a new form entry: 
-      
-      Name: ${sName}
-      Email: ${sEmail}
-      
-      Message:
-      ${sMessage}
-    `
+        Hello,
+        
+        You have a new form entry: 
+        
+        Name: ${sName}
+        Email: ${sEmail}
+        
+        Message:
+        ${sMessage}
+      `,
+      replyTo: [sEmail],
     })
     .then(msg => console.log(msg))
-    .catch(err => console.log(err))
 
-    return NextResponse.json({ success: true }, { status: 200 })
+    return NextResponse.json({ message: 'Thank you! We will reach out to you soon.' }, { status: 200 })
   } catch (err) {
     console.error('Error sending email', err)
     return NextResponse.json(
-      { error: 'An error occurred while sending the email. Please try again later.' },
+      { message: 'An error occurred while sending the email. Please try again later.' },
       { status: 500 }
     );
   }

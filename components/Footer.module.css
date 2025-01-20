@@ -117,7 +117,7 @@
 
 @media(max-width: 1000px) {
     .footer {
-        padding: 2rem 3rem;
+        padding: 2rem 3rem 3rem;
         grid-column-gap: 4rem;
     }
 

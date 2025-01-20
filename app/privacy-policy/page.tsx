@@ -1,9 +1,11 @@
 import styles from "@/app/legal.module.css"
 import {supportEmail} from "@/constants/Constants";
+import Head from "next/head";
 
 export default function PrivacyPolicy() {
   return (
     <div className={styles.page}>
+      <title>Privacy Policy - BySaether</title>
       <header className={styles.header}>
         <span id={"intersector"}/>
         <h1>Privacy Policy</h1>

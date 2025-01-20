@@ -4,6 +4,7 @@ import projects from '@/data/projects'
 import Image from "next/image";
 import styles from './projects.module.css'
 import {useState} from "react";
+import Head from "next/head";
 
 export default function Projects() {
   const categories = ["All", "Website", "App", "Design"]
@@ -37,6 +38,7 @@ export default function Projects() {
 
   return (
     <div className={styles.page}>
+      <title>Projects - BySaether</title>
       <header>
         <span id="intersector"/>
         <h1>Our Projects</h1>

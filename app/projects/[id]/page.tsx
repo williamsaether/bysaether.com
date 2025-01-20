@@ -11,6 +11,7 @@ export default async function Project({ params }: {params: Promise<{ id: string 
 
   return (
     <div className={styles.page}>
+      <title>Project - BySaether</title>
       <header className={styles.header}>
         <div className={styles.leftSide}>
           <span id="intersector"/>

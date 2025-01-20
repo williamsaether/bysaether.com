@@ -6,12 +6,14 @@ import Image from "next/image";
 import Form from "next/form";
 import Link from "next/link";
 import {FormEvent, useRef, useState} from "react";
+import Head from "next/head";
 
 export default function Support() {
   const formSection = useRef(null);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [response, setResponse] = useState<{success: boolean, message: string} | undefined>(undefined);
 
   const scrollToForm = () => {
     // @ts-ignore
@@ -22,15 +24,7 @@ export default function Support() {
     e.preventDefault()
 
     try {
-      const res = await fetch('/api/contact', {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name, email, message
-        }),
-      })
+      setResponse({success: false, message: 'An error occurred while sending the email. Please try again later.'})
     } catch (err: any) {
       console.error('Err', err)
     }
@@ -38,6 +32,7 @@ export default function Support() {
 
   return (
     <div className={styles.page}>
+      <title>Contact - BySaether</title>
       <header>
         <span id="intersector"/>
         <h1>Get in Touch</h1>
@@ -143,6 +138,7 @@ export default function Support() {
                        maxLength={255} type={"text"}
                        value={name} onChange={e => setName(e.target.value)}
                        placeholder={"Name Nameless"} required
+                       disabled={response !== undefined}
                 />
               </div>
               <div>
@@ -155,6 +151,7 @@ export default function Support() {
                        maxLength={255} type={"email"}
                        value={email} onChange={e => setEmail(e.target.value)}
                        placeholder={"name@example.com"} required
+                       disabled={response !== undefined}
                 />
               </div>
               <div>
@@ -167,11 +164,23 @@ export default function Support() {
                           maxLength={255} value={message}
                           onChange={e => setMessage(e.target.value)}
                           placeholder={"Hi, \n\nI was just wondering if ..."} required
+                          disabled={response !== undefined}
                 />
               </div>
               <div className={common.ctas}>
-                <button className={common.primary} type="submit"><p>Send</p></button>
-                <p>We usually reply within 24 hours.</p>
+                {
+                  response === undefined ?
+                    <>
+                      <button className={common.primary} type="submit"><p>Send</p></button>
+                      <p>We usually reply within 24 hours.</p>
+                    </> :
+                    <>
+                      <button className={common.primary} style={{backgroundColor: `${response.success ? '#97ff6e' : '#ff6e6e'}`}}><p>
+                        {response.success ? 'Success!' : 'Error!'}
+                      </p></button>
+                      <p>{response.message}</p>
+                    </>
+                }
               </div>
             </Form>
           </div>

@@ -1,9 +1,11 @@
 import styles from "@/app/legal.module.css"
 import {supportEmail} from "@/constants/Constants";
+import Head from "next/head";
 
 export default function CookiePolicy() {
   return (
     <div className={styles.page}>
+      <title>Cookie Policy - BySaether</title>
       <header className={styles.header}>
         <span id={"intersector"}/>
         <h1>Cookie Policy</h1>

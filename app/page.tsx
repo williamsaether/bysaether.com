@@ -5,6 +5,7 @@ import common from "./common.module.css";
 import styles from "./page.module.css";
 import projects from "@/data/projects";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function Home() {
   return (

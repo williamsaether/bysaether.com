@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from './about.module.css'
 import Link from "next/link";
 import {useRef} from "react";
+import Head from "next/head";
 
 export default function About() {
   const teamSection = useRef(null);
@@ -15,6 +16,7 @@ export default function About() {
 
   return (
     <div className={styles.page}>
+      <title>About - BySaether</title>
       <header className={styles.about}>
         <span id={"intersector"}/>
         <p>

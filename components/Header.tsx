@@ -46,8 +46,11 @@ export default function Header() {
             className={styles.logo}
             src="/images/bysaether.svg"
             alt="BySaether Logo"
-            width={295}
-            height={59}
+            loading={"eager"}
+            quality={100}
+            width={1180}
+            height={236}
+            blurDataURL={'transparent'}
             style={{objectFit: "contain", transform: 'translate(3px,4px)'}}
             priority
           />
