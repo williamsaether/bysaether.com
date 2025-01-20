@@ -28,7 +28,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
+  transform: translate(-3px,0);
+  width: 102vw;
   height: 800px;
   max-height: 90svh;
   object-fit: cover;
@@ -111,6 +112,11 @@
 }
 
 @media (max-width: 900px) {
+  .background {
+    width: 100vw;
+    transform: translate(0,0);
+    overflow: hidden;
+  }
   .projectGrid {
     grid-template-columns: 1fr;
   }
