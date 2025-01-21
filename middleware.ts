@@ -8,7 +8,7 @@ export function middleware(req: NextRequest) {
 
   if (subdomain === 'contact') {
     const url = req.nextUrl.clone();
-    url.pathname = `/support${url.pathname}`;
+    url.pathname = `/contact`;
     return NextResponse.rewrite(url);
   }
 
