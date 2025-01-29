@@ -25,14 +25,14 @@ export function middleware(req: NextRequest) {
     if (url.pathname === '/') {
       url.pathname = `/contact`;
       return NextResponse.rewrite(url);
-    } else redirectHome(url)
+    } else return redirectHome(url)
   }
 
   if (subdomain === 'codecore') {
     if (['/privacy-policy'].includes(url.pathname)) {
       url.pathname = `/codecore${url.pathname}`;
       return NextResponse.rewrite(url);
-    } else redirectHome(url)
+    } else return redirectHome(url)
   }
 
   return NextResponse.next();
