@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import {NextURL} from "next/dist/server/web/next-url";
 
 export const config = {
   matcher: [
@@ -24,11 +25,20 @@ export function middleware(req: NextRequest) {
     if (url.pathname === '/') {
       url.pathname = `/contact`;
       return NextResponse.rewrite(url);
-    } else {
-      url.hostname = 'bysaether.com'
+    } else redirectHome(url)
+  }
+
+  if (subdomain === 'codecore') {
+    if (['/privacy-policy'].includes(url.pathname)) {
+      url.pathname = `/codecore${url.pathname}`;
       return NextResponse.rewrite(url);
-    }
+    } else redirectHome(url)
   }
 
   return NextResponse.next();
+}
+
+function redirectHome(url: NextURL) {
+  url.hostname = 'bysaether.com'
+  return NextResponse.rewrite(url);
 }
