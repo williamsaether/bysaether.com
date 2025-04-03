@@ -41,7 +41,7 @@ export default function Header() {
           <span className={`${styles.line} ${isOpen ? styles.line2 : ''}`}></span>
           <span className={`${styles.line} ${isOpen ? styles.line3 : ''}`}></span>
         </button>
-        <Link href={'/'}>
+        <Link href={'/home'}>
           <Image
             className={styles.logo}
             src="/images/bysaether.svg"

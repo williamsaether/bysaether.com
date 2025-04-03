@@ -21,24 +21,30 @@ export function middleware(req: NextRequest) {
 
   const url = req.nextUrl.clone();
 
+  if (url.pathname === '/home') return redirectHome(url,true)
+
   if (subdomain === 'contact') {
     if (url.pathname === '/') {
       url.pathname = `/contact`;
       return NextResponse.rewrite(url);
-    } else return redirectHome(url)
+    } else return redirectHome(url,false)
   }
 
   if (subdomain === 'codecore') {
-    if (['/privacy-policy'].includes(url.pathname)) {
+    if (['/','/privacy-policy'].includes(url.pathname)) {
       url.pathname = `/codecore${url.pathname}`;
       return NextResponse.rewrite(url);
-    } else return redirectHome(url)
+    } else return redirectHome(url,false)
   }
 
   return NextResponse.next();
 }
 
-function redirectHome(url: NextURL) {
-  url.hostname = 'bysaether.com'
+function redirectHome(url: NextURL, removePath: boolean) {
+  url.host = 'localhost:3000'
+  if (removePath) {
+    url.pathname = ''
+    return NextResponse.redirect(url);
+  }
   return NextResponse.rewrite(url);
 }
