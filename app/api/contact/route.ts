@@ -43,11 +43,11 @@ export async function POST(req: Request) {
     })
     .then(msg => console.log(msg))
 
-    return NextResponse.json({ message: 'Thank you! We will reach out to you soon.' }, { status: 200 })
+    return NextResponse.json({ success: true, message: 'Thank you! We will reach out to you soon.' }, { status: 200 })
   } catch (err) {
     console.error('Error sending email', err)
     return NextResponse.json(
-      { message: 'An error occurred while sending the email. Please try again later.' },
+      { success: false, message: 'An error occurred while sending the email. Please try again later.' },
       { status: 500 }
     );
   }

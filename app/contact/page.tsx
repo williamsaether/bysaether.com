@@ -24,9 +24,16 @@ export default function Support() {
     e.preventDefault()
 
     try {
-      setResponse({success: false, message: 'An error occurred while sending the email. Please try again later.'})
-    } catch (err: any) {
-      console.error('Err', err)
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      const data = await res.json();
+      setResponse(data);
+    } catch (err) {
+      setResponse({ success: false, message: "An error occurred while sending the email. Please try again later." });
     }
   }
 
