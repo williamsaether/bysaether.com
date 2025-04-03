@@ -42,8 +42,8 @@ export function middleware(req: NextRequest) {
 }
 
 function redirectHome(url: NextURL, removePath: boolean = true) {
-  const targetUrl = new URL(url);
-  targetUrl.host = 'localhost:3000'; // Use full domain
+  const targetUrl = new NextURL(url);
+  targetUrl.host = 'bysaether.com';
 
   if (removePath) {
     targetUrl.pathname = '/';
