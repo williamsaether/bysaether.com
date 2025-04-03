@@ -41,7 +41,7 @@ export function middleware(req: NextRequest) {
 }
 
 function redirectHome(url: NextURL, removePath: boolean) {
-  url.host = 'localhost:3000'
+  url.host = 'bysaether'
   if (removePath) {
     url.pathname = ''
     return NextResponse.redirect(url);
