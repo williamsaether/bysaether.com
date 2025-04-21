@@ -31,7 +31,7 @@ export function middleware(req: NextRequest) {
   }
 
   if (subdomain === 'codecore') {
-    if (['/','/privacy-policy'].includes(url.pathname)) {
+    if (['/','/privacy-policy', '/manage-data'].includes(url.pathname)) {
       url.pathname = `/codecore${url.pathname}`;
       return NextResponse.rewrite(url);
     }
