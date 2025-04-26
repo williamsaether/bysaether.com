@@ -112,15 +112,15 @@ export default function CodeCore() {
 						fingertips!
 						Perfect for shopping, event tickets, loyalty cards, and more.
 					</p>
-					{/*<a href={projects.find(p => p.id === 'codecore')!.appStore!.apple}>
+					<a href={projects.find(p => p.id === 'codecore')!.appStore!.apple}>
             <Image
               src={'/images/appstore/apple-white.svg'}
               alt={`Apple App Store Link`}
-              width={180}
-              height={60}
+              width={150}
+              height={50}
               style={{objectFit: "contain", marginTop: "1em"}}
             />
-          </a>*/}
+          </a>
 					<span id="intersector"/>
 				</div>
 			</section>

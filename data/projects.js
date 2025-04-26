@@ -12,9 +12,9 @@ const projects = [
     "logoURL": "/images/codecore/logo.svg",
     "squareLogoURL": "/images/codecore/logo.svg",
     "showURL": '/images/codecore/overview.webp',
-    "websiteLink": "",
+    "websiteLink": "https://codecore.bysaether.com",
     "appStore": {
-      "apple": "",
+      "apple": "https://apps.apple.com/app/codecore/id6739577598",
       "google": ""
     },
     "details": {

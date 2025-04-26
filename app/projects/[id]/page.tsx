@@ -44,8 +44,8 @@ export default async function Project({ params }: {params: Promise<{ id: string 
               <Image
                 src={'/images/appstore/apple.svg'}
                 alt={`Apple App Store Link`}
-                width={180}
-                height={53}
+                width={150}
+                height={50}
                 style={{objectFit: "contain"}}
               />
             </a>}
