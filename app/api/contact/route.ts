@@ -1,12 +1,12 @@
 import formData from 'form-data'
 import Mailgun from 'mailgun.js'
 import {supportEmail} from "@/constants/Constants";
-import {NextResponse} from "next/server";
+import {NextRequest, NextResponse} from "next/server";
 
 const API_KEY = process.env.MAILGUN_API_KEY || ''
 const DOMAIN = process.env.MAILGUN_DOMAIN || ''
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
   const mailgun = new Mailgun(formData);
   const mg = mailgun.client({username: 'api', key: API_KEY, url: 'https://api.eu.mailgun.net'});
 
