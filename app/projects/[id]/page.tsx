@@ -42,7 +42,7 @@ export default async function Project({ params }: {params: Promise<{ id: string 
           {project.appStore && <div className={styles.appStore}>
             {project.appStore.apple && <a href={project.appStore.apple}>
               <Image
-                src={'/images/appstore/apple.svg'}
+                src={'/images/appstore/apple-white.svg'}
                 alt={`Apple App Store Link`}
                 width={150}
                 height={50}
