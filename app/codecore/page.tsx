@@ -114,7 +114,7 @@ export default function CodeCore() {
 					</p>
 					<a href={projects.find(p => p.id === 'codecore')!.appStore!.apple}>
             <Image
-              src={'/images/appstore/apple-white.svg'}
+              src={'/images/appstore/apple-darkmode.svg'}
               alt={`Apple App Store Link`}
               width={150}
               height={50}
