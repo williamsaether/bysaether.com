@@ -4,7 +4,7 @@ import {supportEmail} from "@/constants/Constants";
 export default function PrivacyPolicy() {
 	return (
 		<div className={styles.page}>
-			<title>Privacy Policy - CodeCore</title>
+			<title>Manage Data - CodeCore</title>
 			<header className={styles.header}>
 				<span id={"intersector"}/>
 				<h1>Manage Your Ad Consent</h1>

@@ -87,6 +87,7 @@ export default function CodeCore() {
 
 	return (
 		<div>
+			<title>CodeCore - BySaether</title>
 			<section className={styles.front}>
 				<Image
 					src={'/images/codecore/frontpage.webp'}
