@@ -47,6 +47,7 @@ export default function About() {
               <div className={styles.leftSide}>
                 <h2 className={styles.name}>William Sæther</h2>
                 <p className={styles.roles}>Founder & Developer</p>
+                <a className={styles.link} href="https://william.bysaether.com" target="_blank">william.bysaether.com</a>
                 <div className={styles.skills}>
                   {["JavaScript", "TypeScript", "React", "React Native", "Next.js", "Python", "SQL", "Filming", "Video Editing", "Graphic Design"].map((skill, index) => (
                     <span key={index}>{skill}</span>
