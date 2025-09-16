@@ -35,6 +35,10 @@ export default function Home() {
           Website under Revamp
         </div>
         <div className={common.noti}>
+          <span style={{background: "#ff6200"}}>TIPS</span>
+          <div>Check out my <a href={"https://github.com/williamsaether"} target="_blank">GitHub!</a></div>
+        </div>
+        <div className={common.noti}>
           <span style={{background: "#c100ff"}}>NEW</span>
           <div><a href={"https://william.bysaether.com"} target="_blank">william.bysaether.com</a> is LIVE!</div>
         </div>
