@@ -5,7 +5,6 @@ import common from "./common.module.css";
 import styles from "./page.module.css";
 import projects from "@/data/projects";
 import Link from "next/link";
-import Head from "next/head";
 
 export default function Home() {
   return (
@@ -31,6 +30,14 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <div className={common.noti}>
+          <span style={{background: "#00c7ff"}}>DEV</span>
+          Website under Revamp
+        </div>
+        <div className={common.noti}>
+          <span style={{background: "#c100ff"}}>NEW</span>
+          <div><a href={"https://william.bysaether.com"} target="_blank">william.bysaether.com</a> is LIVE!</div>
+        </div>
         <span id="intersector" className={styles.intersector}/>
         <section className={styles.section}>
           <header>

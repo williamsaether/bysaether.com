@@ -47,6 +47,26 @@ a.secondary, button.secondary {
   min-width: 180px;
 }
 
+.noti {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin: auto auto 10px;
+  padding: 4px 8px 4px 4px;
+  border-radius: 100px;
+  border: 1px solid #404040;
+  background: #20202099;
+  font-size: .8rem;
+  font-weight: 600;
+}
+.noti span {
+  padding: 2px 4px;
+  border-radius: 100px;
+}
+.noti a {
+  text-decoration: underline;
+}
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   a.primary:hover {
