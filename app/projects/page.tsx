@@ -7,7 +7,7 @@ import {useState} from "react";
 import Head from "next/head";
 
 export default function Projects() {
-  const categories = ["All", "Website", "App", "Design"]
+  const categories = ["All", "Website", "App", "Design", "Extension"]
   const [selectedCategory, setSelectedCategory] = useState<string>(categories[0]);
 
   const renderAllProjects = () => {
@@ -23,6 +23,7 @@ export default function Projects() {
                 alt={`Image for ${project.name}`}
                 width={500}
                 height={500}
+                quality={100}
                 style={{objectFit: "contain"}}
               />
             </div>

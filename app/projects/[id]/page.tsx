@@ -101,6 +101,7 @@ export default async function Project({ params }: {params: Promise<{ id: string 
               alt={`Screenshot of application`}
               height={1920}
               width={1080}
+              quality={100}
               style={{objectFit: "contain"}}
             />
           </div>

@@ -51,22 +51,23 @@ export default function Home() {
             </div>
           </header>
           <div className={styles.projectGrid}>
-            <Link href={`/projects/${projects[0].id}`}>
-              <div className={styles.card}>
-                <Image
-                  src={projects[0].showURL}
-                  alt="CodeCore Logo"
-                  width={500}
-                  height={500}
-                  placeholder={"empty"}
-                  quality={100}
-                />
-                <div className={styles.cardText}>
-                  <h3>{projects[0].name}</h3>
-                  <p>{projects[0].description}</p>
+            {[projects[0], projects[3]].map(project => (
+              <Link href={`/projects/${project.id}`} key={project.id}>
+                <div className={styles.card}>
+                  <Image
+                    src={project.showURL}
+                    alt={project.name}
+                    width={500}
+                    height={500}
+                    quality={100}
+                  />
+                  <div className={styles.cardText}>
+                    <h3>{project.name}</h3>
+                    <p>{project.description}</p>
+                  </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            ))}
           </div>
         </section>
       </main>
