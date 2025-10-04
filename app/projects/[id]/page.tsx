@@ -58,6 +58,15 @@ export default async function Project({ params }: {params: Promise<{ id: string 
                 style={{objectFit: "contain"}}
               />
             </a>}
+            {project.appStore.chrome && <a href={project.appStore.chrome}>
+              <Image
+                src={'/images/appstore/cws-darkmode.png'}
+                alt={`Chrome Webstore Link`}
+                width={178}
+                height={50}
+                style={{objectFit: "contain"}}
+              />
+            </a>}
           </div>}
         </div>
         <div className={styles.rightSide}>

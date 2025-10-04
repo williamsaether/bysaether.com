@@ -49,7 +49,9 @@ const projects = [
     "squareLogoURL": "/images/codegrab/logo.svg",
     "showURL": "/images/codegrab/screenshots/screenshot1.webp",
     "websiteLink": "https://github.com/williamsaether/CodeGrab",
-    "webStore": {
+    "appStore": {
+      "apple": "",
+      "google": "",
       "chrome": "https://chromewebstore.google.com/detail/codegrab/doijgnjlnohblbcidlgnmkpjnfppcalp"
     },
     "details": {
