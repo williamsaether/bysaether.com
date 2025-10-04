@@ -54,9 +54,9 @@ export default function About() {
                   ))}
                 </div>
                 <p className={styles.text}>
-                  Hi, I&#39;m William, a <strong>Data Engineering</strong> student from Norway, and the founder
-                  of <i>BySaether</i>. I love developing
-                  creative and user-friendly software solutions, combining technical skills with a good eye for design.
+                  Hi, I&#39;m William, a <strong>MSc Computer Science @ NTNU</strong> student from Norway, and the man
+                  behind <i>BySaether</i>. I love developing creative and user-friendly software solutions,
+                  combining technical skills with a good eye for design.
                 </p>
                 <p className={styles.text}>
                   Outside of software development, I have a passion for content creation, whether that is filming drone
