@@ -29,7 +29,7 @@
 .projects {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 8rem;
+    gap: 6rem;
     width: 100%;
 }
 

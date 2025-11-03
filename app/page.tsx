@@ -12,21 +12,18 @@ export default function Home() {
       <main className={styles.main}>
         <section className={styles.frontSection}>
           <div className={styles.front}>
-            <Image
+            {/*<Image
               src="/images/banner.svg"
               alt="Background banner"
               className={styles.background}
               width={3000}
               height={1344}
               priority
-            />
-            <p className={styles.title}>Hi! Thanks for stopping by.</p>
-            <p className={styles.intro}>
-              At BySaether, we strive to create user-friendly and innovative software solutions. Our mission is
-              to bring ideas to life, one project at a time, while staying committed to quality and creativity.
-            </p>
+            />*/}
+            <p className={styles.title}>Hi, we’re BySaether.</p>
+            <p className={styles.intro}>We build thoughtful, user-focused digital products.</p>
             <div className={common.ctas}>
-              <Link href={'/projects'} className={`${common.primary} ${common.primaryDark}`}>Explore Our Work</Link>
+              <Link href={'/projects'} className={`${common.primary}`}>Explore Our Work</Link>
             </div>
           </div>
         </section>
