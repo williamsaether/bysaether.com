@@ -1,12 +1,26 @@
+.page {
+  margin-top: 0;
+}
+
 .main {
   display: flex;
   flex-direction: column;
 }
 
+.frontSection {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
 .front {
   width: 600px;
   max-width: 100%;
-  margin: 8rem auto 0 0;
+  height: min-content;
   text-align: left;
   text-shadow: 3px 3px 5px rgb(0 0 0 / 10%);
 }
@@ -21,7 +35,7 @@
 .intro {
   font-size: 2rem;
   font-weight: 600;
-  margin-bottom: .8rem;
+  margin-bottom: 1.6rem;
 }
 
 .background {
@@ -35,6 +49,33 @@
   object-fit: cover;
   z-index: -1;
   overflow: visible;
+}
+
+.carouselWrapper {
+  position: relative;
+  height: 100%;
+  width: 300px;
+  margin-right: 5rem;
+}
+
+.imageCarousel {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  animation: scrollLoop 30s linear infinite;
+}
+
+.carouselWrapper:hover .imageCarousel {
+  animation-play-state: paused;
+}
+
+@keyframes scrollLoop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(calc(-3 * (500px + 2rem)));
+  }
 }
 
 .intersector {
