@@ -22,7 +22,7 @@
 }
 
 .scrolled {
-    background-color: rgba(191, 226, 255, 0.75);
+    /*background-color: rgba(191, 226, 255, 0.75);*/
 }
 
 .logo {
@@ -33,7 +33,7 @@
 }
 
 .header img {
-    transition: height .1s ease;
+    transition: all .1s ease;
 }
 
 .scrolled img {
