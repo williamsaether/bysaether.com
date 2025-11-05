@@ -54,7 +54,7 @@ export default function About() {
                   ))}
                 </div>
                 <p className={styles.text}>
-                  Hi, I&#39;m William, a <strong>MSc Computer Science @ NTNU</strong> student from Norway, and the man
+                  Hi, I&#39;m William, a <strong>MSc Computer Science student @ NTNU</strong> from Norway, and the man
                   behind <i>BySaether</i>. I love developing creative and user-friendly software solutions,
                   combining technical skills with a good eye for design.
                 </p>

@@ -38,7 +38,7 @@ export default function Home() {
               height={1344}
               priority
             />*/}
-						<p className={styles.title}>Hi, we’re BySaether.</p>
+						<p className={styles.title}>Hi, we're BySaether.</p>
 						<p className={styles.intro}>We build thoughtful, user-focused digital products.</p>
 						<div className={common.ctas}>
 							<Link href={'/projects'} className={`${common.primary}`}>Explore Our Work</Link>
@@ -46,15 +46,30 @@ export default function Home() {
 						<span id="intersector" className={styles.intersector}/>
 					</div>
 					<div className={styles.carouselWrapper}>
-						<div className={styles.imageCarousel}>
-							{[...Array(2)].map((_, i) => (
-								<React.Fragment key={i}>
-									{projectsFront.map((project, index) => (
-										<TiltCard src={project.src} alt={project.alt} key={index}/>
-									))}
-								</React.Fragment>
-							))}
-						</div>
+						{(() => {
+							const ringCount = 9;
+							const ringItems = Array.from({ length: ringCount }, (_, i) => projectsFront[i % projectsFront.length]);
+							return (
+								<div className={styles.ringScene}>
+									<div
+										className={styles.ringOrbit}
+										style={{ "--count": ringCount } as React.CSSProperties}
+									>
+										{ringItems.map((project, index) => (
+											<div
+												key={index}
+												className={styles.ringItem}
+												style={{ "--i": index } as React.CSSProperties}
+											>
+												<div className={styles.cardUpright}>
+													<TiltCard src={project.src} alt={project.alt} />
+												</div>
+											</div>
+										))}
+									</div>
+								</div>
+							);
+						})()}
 					</div>
 				</section>
 				{/*<div className={common.noti}>
