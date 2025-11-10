@@ -58,15 +58,10 @@
   position: relative;
   height: 100%;
   width: 0px;
-  /* margin-right: 5rem; */
-  /* Ring defaults; can be overridden */
   --radius: 700px;
   --count: 9;
-  --orbit-duration: 30s;
   --scale: 1;
 }
-
-/* Deprecated vertical carousel removed in favor of orbit ring */
 
 @property --orbit {
   syntax: '<angle>';
@@ -175,10 +170,6 @@
   border-radius: 1.5rem;
 }
 
-.cardText {
-
-}
-
 .cardText h3 {
   font-size: 1.5rem;
   font-weight: 800;
@@ -258,9 +249,9 @@
   .intro {
     font-size: 1.5rem;
   }
-  .carouselWrapper { width: 100%; --radius: 200px; --scale: 0.7; }
+  .carouselWrapper { width: 100%; --radius: 100px; --scale: 0.6; }
   .ringScene { width: 100%; height: 100%; }
-  .ringOrbit { top: 200%; right: 40% }
+  .ringOrbit { top: 175%; right: 40% }
 }
 
 @media (max-width: 500px) {
@@ -295,16 +286,9 @@
   .cardText p {
     font-size: .8rem;
   }
-  .carouselWrapper { width: 100%; --radius: 100px; --scale: 0.6; }
-  .ringScene { width: 100%; height: 100%; }
-  .ringOrbit { top: 175%; right: 40% }
 }
 
 @media (max-width: 400px) {
-  .front {
-    margin-top: 2rem;
-  }
-
   .card {
     padding: 2rem;
   }
@@ -312,6 +296,9 @@
   .section h2 {
     font-size: 1.5rem;
   }
+  .carouselWrapper { width: 100%; --radius: 70px; --scale: 0.5; }
+  .ringScene { width: 100%; height: 100%; }
+  .ringOrbit { top: 175%; right: 40% }
 }
 
 @media (max-width: 300px) {
@@ -319,6 +306,26 @@
     font-size: 1.2rem;
   }
 }
+
+@media (max-height: 940px) and (max-width: 800px) {
+  .frontSection {
+    height: 65svh;
+  }
+}
+
+@media (max-height: 860px) and (max-width: 800px) {
+  .frontSection {
+    height: 75svh;
+    margin-top: 8rem;
+  }
+}
+
+@media (max-height: 740px) and (max-width: 800px) {
+  .frontSection {
+    height: 85svh;
+  }
+}
+
 
 @media (prefers-color-scheme: dark) {
   .logo {
