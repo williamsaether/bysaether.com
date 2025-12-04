@@ -175,8 +175,7 @@ export default function Support() {
                 </div>
                 <textarea 
                   className={styles.formInput}
-                  name={"message"} id={"contact-message"}
-                  maxLength={255} value={message}
+                  name={"message"} id={"contact-message"} value={message}
                   onChange={e => setMessage(e.target.value)}
                   placeholder={"Hi, \n\nI was just wondering if ..."} required
                   disabled={response !== undefined}
