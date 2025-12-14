@@ -4,9 +4,7 @@ import common from "@/app/common.module.css";
 import styles from './contact.module.css'
 import Image from "next/image";
 import Form from "next/form";
-import Link from "next/link";
 import {FormEvent, useRef, useState} from "react";
-import Head from "next/head";
 
 export default function Support() {
   const formSection = useRef(null);
@@ -23,11 +21,13 @@ export default function Support() {
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault()
 
+    const website = (document.querySelector("input[name='website']") as HTMLInputElement)?.value;
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message }),
+        body: JSON.stringify({ name, email, message, website }),
       });
 
       const data = await res.json();
@@ -132,20 +132,26 @@ export default function Support() {
                 </div>
               </div>
             </div>
-            <Form id={"contact"} form={"contact"} className={styles.form}
-                  action={''} aria-label={"Contact Form"} onSubmit={onSubmit}
+            <Form 
+              id={"contact"} form={"contact"} className={styles.form}
+              action={''} aria-label={"Contact Form"} onSubmit={onSubmit}
             >
+              <input 
+                type="text" name="website" autoComplete="off" 
+                tabIndex={-1} style={{ display: "none" }}
+              />
               <div>
                 <div className={styles.horizLabels}>
                   <label htmlFor={"contact-name"}>Name</label>
                   {/*<label htmlFor={"contact-name"}>*Mandatory</label>*/}
                 </div>
-                <input className={styles.formInput}
-                       name={"name"} id={"contact-name"}
-                       maxLength={255} type={"text"}
-                       value={name} onChange={e => setName(e.target.value)}
-                       placeholder={"Name Nameless"} required
-                       disabled={response !== undefined}
+                <input 
+                  className={styles.formInput}
+                  name={"name"} id={"contact-name"}
+                  maxLength={255} type={"text"}
+                  value={name} onChange={e => setName(e.target.value)}
+                  placeholder={"Name Nameless"} required
+                  disabled={response !== undefined}
                 />
               </div>
               <div>
@@ -153,12 +159,13 @@ export default function Support() {
                   <label htmlFor={"contact-email"}>Email</label>
                   {/*<label htmlFor={"contact-email"}>*Mandatory</label>*/}
                 </div>
-                <input className={styles.formInput}
-                       name={"email"} id={"contact-email"}
-                       maxLength={255} type={"email"}
-                       value={email} onChange={e => setEmail(e.target.value)}
-                       placeholder={"name@example.com"} required
-                       disabled={response !== undefined}
+                <input 
+                  className={styles.formInput}
+                  name={"email"} id={"contact-email"}
+                  maxLength={255} type={"email"}
+                  value={email} onChange={e => setEmail(e.target.value)}
+                  placeholder={"name@example.com"} required
+                  disabled={response !== undefined}
                 />
               </div>
               <div>
@@ -166,12 +173,12 @@ export default function Support() {
                   <label htmlFor={"contact-message"}>Message</label>
                   {/*<label htmlFor={"contact-message"}>*Mandatory</label>*/}
                 </div>
-                <textarea className={styles.formInput}
-                          name={"message"} id={"contact-message"}
-                          maxLength={255} value={message}
-                          onChange={e => setMessage(e.target.value)}
-                          placeholder={"Hi, \n\nI was just wondering if ..."} required
-                          disabled={response !== undefined}
+                <textarea 
+                  className={styles.formInput}
+                  name={"message"} id={"contact-message"} value={message}
+                  onChange={e => setMessage(e.target.value)}
+                  placeholder={"Hi, \n\nI was just wondering if ..."} required
+                  disabled={response !== undefined}
                 />
               </div>
               <div className={common.ctas}>
