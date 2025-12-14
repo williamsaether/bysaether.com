@@ -46,6 +46,14 @@ export function middleware(req: NextRequest) {
     return redirectHome(url,false)
   }
 
+  if (subdomain === 'recigrab') {
+    if (['/privacy-policy'].includes(url.pathname)) {
+      url.pathname = `/recigrab${url.pathname}`;
+      return NextResponse.rewrite(url);
+    }
+    return redirectHome(url,false)
+  }
+
   return NextResponse.next();
 }
 
