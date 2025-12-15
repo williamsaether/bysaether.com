@@ -92,7 +92,7 @@ export default function Home() {
 						</div>
 					</header>
 					<div className={styles.projectGrid}>
-						{[projects[0], projects[3]].map(project => (
+						{[projects[4], projects[3]].map(project => (
 							<Link href={`/projects/${project.id}`} key={project.id}>
 								<div className={styles.card}>
 									<Image
