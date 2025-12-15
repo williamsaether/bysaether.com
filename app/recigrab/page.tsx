@@ -22,7 +22,7 @@ const pages = [
     screenshotUrl: '/images/recigrab/screenshots/home-b.webp',
     features: [
       {
-        title: "Import from Instagram & TikTok",
+        title: "Import from Instagram",
         description: "Save recipes directly from social media with a single tap.",
         icon: IoSparkles
       },
