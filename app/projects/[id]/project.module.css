@@ -58,6 +58,7 @@
 .rightSide img {
     width: 15rem;
     height: inherit;
+    border-radius: 2rem;
 }
 
 .main {

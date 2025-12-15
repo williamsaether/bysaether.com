@@ -135,6 +135,48 @@ const projects = [
       "/images/portfolio/screenshots/experience.webp",
       "/images/portfolio/screenshots/education.webp"
     ]
+  },
+  {
+    "id": "recigrab",
+    "categories": ["App"],
+    "name": "ReciGrab",
+    "short": "Recipe Extraction & Cooking App",
+    "description": "An app that turns social media recipes into clean, structured cooking instructions optimized for meal prep and daily cooking.",
+    "techStack": [
+      "React Native",
+      "Expo",
+      "SQLite",
+      "OpenAI API"
+    ],
+    "logoURL": "/images/recigrab/logo.svg",
+    "squareLogoURL": "/images/recigrab/logo.svg",
+    "showURL": "/images/recigrab/overview.webp",
+    "websiteLink": "https://recigrab.bysaether.com",
+    "appStore": {
+      "apple": "https://apps.apple.com/app/recigrab/id6756504828",
+      "google": ""
+    },
+    "details": {
+      "overview": "ReciGrab is built for people who save recipes from Instagram, but want a clean and practical cooking experience. The app extracts ingredients and instructions using AI, then presents them in a structured, distraction-free format designed for real-world cooking and meal prep.",
+      "features": [
+        "Import recipes directly from social media and other web links.",
+        "AI-powered extraction of ingredients and step-by-step instructions.",
+        "Adjustable serving sizes with dynamic ingredient scaling.",
+        "Categorization by meal type",
+        "Dedicated cooking mode.",
+        "Offline-first design using local storage."
+      ],
+      "goals": "The goal of ReciGrab is to remove friction between discovering recipes and actually cooking them. Instead of scrolling through videos or captions in the kitchen, or not knowing where to save social media recipes, users get a clean, reliable recipe format that supports everyday use."
+    },
+    "screenshots": [
+      "/images/recigrab/screenshots/home.webp",
+      "/images/recigrab/screenshots/recipes.webp",
+      "/images/recigrab/screenshots/recipe.webp",
+      "/images/recigrab/screenshots/recipe-scroll.webp",
+      "/images/recigrab/screenshots/cooking-mode.webp",
+      "/images/recigrab/screenshots/search.webp",
+      "/images/recigrab/screenshots/settings.webp",
+    ]
   }
 ]
 
