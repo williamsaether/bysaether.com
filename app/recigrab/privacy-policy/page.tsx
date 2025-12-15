@@ -19,24 +19,30 @@ export default function PrivacyPolicy() {
         <h4>Data You Provide</h4>
         <p>
           Recipes you paste or import (including URLs and captions) and any manual edits you make are stored locally in
-          the app's SQLite database on your device.
+          the app&apos;s SQLite database on your device.
         </p>
         <h4>AI Conversion Requests</h4>
         <p>
-          When you ask ReciGrab to convert a caption or title into a structured recipe, the submitted text is sent to
-          api.bysaether.com/parse over HTTPS to generate the recipe. We do not store these submissions on our servers.
+          When you ask ReciGrab to convert the content into a structured recipe, the submitted text is sent over
+          HTTPS to api.bysaether.com/parse and processed by the OpenAI API (gpt-4o-mini) to return the recipe. We do not
+          store these submissions on our servers.
         </p>
         <h4>Automatically Collected for Ads</h4>
         <p>
           Google AdMob may collect device and ad information (such as advertising ID, IP/country, app version, and OS)
           to deliver and measure ads.
         </p>
+        <h4>Analytics and Crash Reporting</h4>
+        <p>
+          Expo Insights collects app performance, crash diagnostics, device details, and app version information to help
+          us monitor and improve stability.
+        </p>
 
         <h3>2. Third-Party Services</h3>
         <h4><strong>Google AdMob</strong> (ads)</h4>
         <ul>
           <li>Used for personalized or non-personalized advertising.</li>
-          <li>AdMob may collect device identifiers, region/IP, app version, and performance data for ad delivery.</li>
+          <li>May collect device identifiers, region/IP, app version, and performance data for ad delivery.</li>
           <li>On iOS, App Tracking Transparency (ATT) permission is requested when needed.</li>
           <li>Manage your ad consent in <strong>Settings → Ad consent</strong> inside the app.</li>
           <li>
@@ -46,9 +52,14 @@ export default function PrivacyPolicy() {
             </a>
           </li>
         </ul>
-        <h4><strong>Expo / React Native services</strong> (if enabled)</h4>
+        <h4><strong>Expo Insights</strong></h4>
         <ul>
-          <li>May be used for analytics or crash reporting depending on your build configuration.</li>
+          <li>Collects analytics and crash diagnostics (including device/app version info) to improve app stability.</li>
+        </ul>
+        <h4><strong>OpenAI API (gpt-4o-mini via api.bysaether.com/parse)</strong></h4>
+        <ul>
+          <li>Receives the text you submit for recipe parsing and returns structured recipes.</li>
+          <li>No additional personal data is sent beyond the text you provide for parsing.</li>
         </ul>
         <h4><strong>Embedded WebViews</strong> (opening recipe source links)</h4>
         <ul>
@@ -58,29 +69,30 @@ export default function PrivacyPolicy() {
 
         <h3>3. How We Use Your Information</h3>
         <ul>
-          <li>Convert your submitted captions/titles into structured recipes via api.bysaether.com/parse.</li>
+          <li>Convert your submitted captions/titles into structured recipes via api.bysaether.com/parse and OpenAI.</li>
           <li>Display and measure ads (personalized if consented, otherwise non-personalized).</li>
-          <li>Improve stability and performance if analytics/crash reporting is enabled in your build.</li>
+          <li>Monitor performance and resolve crashes through Expo Insights.</li>
         </ul>
 
         <h3>4. How We Store Your Data</h3>
         <p>
           Recipes and preferences are stored locally in the on-device SQLite database. AI requests are sent over HTTPS to
-          api.bysaether.com/parse for processing, and responses are saved only on your device. We do not run our own
-          cloud database for ReciGrab.
+          api.bysaether.com/parse for processing by OpenAI, and responses are saved only on your device. We do not run
+          our own cloud database for ReciGrab.
         </p>
 
         <h3>5. Your Choices and Controls</h3>
         <ul>
-          <li>Manage ad consent and tracking in the app, and on iOS in system tracking settings.</li>
-          <li>Opting out of personalized ads will switch to non-personalized ads.</li>
-          <li>Remove AI submissions and recipes by clearing data via in-app data controls or by uninstalling the app.</li>
+          <li>Manage ad consent and tracking in <strong>Settings → Ad consent</strong> and, on iOS, in system tracking settings.</li>
+          <li>Opting out of personalized ads switches to non-personalized ads.</li>
+          <li>Clear local recipes and AI submissions in the app&apos;s Handle data controls or by uninstalling the app.</li>
           <li>WebView browsing follows the policies of the sites you open.</li>
         </ul>
 
-        <h3>6. Children's Privacy</h3>
+        <h3>6. Children&apos;s Privacy</h3>
         <p>
-          ReciGrab is intended for users 13+ and is not directed to children.
+          ReciGrab is intended for users 13+ and is not directed to children. The app includes unrestricted web access
+          through WebViews and ads that may contain content for adults.
         </p>
 
         <h3>7. Changes to This Policy</h3>
