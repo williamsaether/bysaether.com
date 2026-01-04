@@ -170,12 +170,13 @@ const projects = [
     },
     "screenshots": [
       "/images/recigrab/screenshots/home.webp",
-      "/images/recigrab/screenshots/recipes.webp",
-      "/images/recigrab/screenshots/recipe.webp",
+      "/images/recigrab/screenshots/recipes-order.webp",
+      "/images/recigrab/screenshots/scan.webp",
       "/images/recigrab/screenshots/recipe-scroll.webp",
       "/images/recigrab/screenshots/cooking-mode.webp",
       "/images/recigrab/screenshots/search.webp",
       "/images/recigrab/screenshots/settings.webp",
+      "/images/recigrab/screenshots/settings-conversion.webp",
     ]
   }
 ]
