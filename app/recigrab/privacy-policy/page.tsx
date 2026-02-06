@@ -8,7 +8,7 @@ export default function PrivacyPolicy() {
       <header className={styles.header}>
         <span id={"intersector"} />
         <h1>Privacy Policy</h1>
-        <p className={styles.date}>Updated January 2025</p>
+        <p className={styles.date}>Updated February 2026</p>
         <p>
           Welcome to ReciGrab. We respect your privacy and want to be clear about what data stays on your device, what
           is sent for processing, and how your choices shape advertising and tracking.
@@ -24,7 +24,7 @@ export default function PrivacyPolicy() {
         <h4>AI Conversion Requests</h4>
         <p>
           When you ask ReciGrab to convert the content into a structured recipe, the submitted text is sent over
-          HTTPS to api.bysaether.com/parse and processed by the OpenAI API (gpt-4o-mini) to return the recipe. We do not
+          HTTPS to api.bysaether.com/parse and processed by the OpenAI API to return the recipe. We do not
           store these submissions on our servers.
         </p>
         <h4>Automatically Collected for Ads</h4>
@@ -104,6 +104,11 @@ export default function PrivacyPolicy() {
         <h3>8. Contact Us</h3>
         <p>If you have questions about this Privacy Policy, contact us at:</p>
         <p>Email: {supportEmail}</p>
+        <p>
+          <a href={"/recigrab/manage-data"} rel="noopener noreferrer">
+            Manage Data / Deletion Instructions
+          </a>
+        </p>
       </main>
     </div>
   );

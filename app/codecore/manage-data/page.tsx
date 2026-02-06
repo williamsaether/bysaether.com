@@ -1,7 +1,7 @@
 import styles from "@/app/legal.module.css"
 import {supportEmail} from "@/constants/Constants";
 
-export default function PrivacyPolicy() {
+export default function ManageData() {
 	return (
 		<div className={styles.page}>
 			<title>Manage Data - CodeCore</title>
