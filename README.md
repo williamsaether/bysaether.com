@@ -41,9 +41,13 @@ BySaether.com is the portfolio and product hub for BySaether — showcasing proj
   - `npm install`
 
 - Environment:
-  - Create `.env.local`:
+  - Create `.env.local` (or copy from `.env.example`):
     - `MAILGUN_API_KEY=...`
     - `MAILGUN_DOMAIN=...` (e.g. `mg.bysaether.com`)
+    - `META_APP_ID=...`
+    - `META_APP_SECRET=...`
+    - `META_OEMBED_ACCESS_TOKEN=...` (recommended; otherwise app falls back to `META_APP_ID|META_APP_SECRET`)
+    - `META_GRAPH_VERSION=v23.0` (optional override)
   - Note: Do not commit `.env.local` (already ignored by `.gitignore`)
 
 - Development:
@@ -66,6 +70,30 @@ BySaether.com is the portfolio and product hub for BySaether — showcasing proj
     - 400: `{ error: 'All fields are required' }`
     - 500: `{ success: false, message: string }`
   - Implemented in `app/api/contact/route.ts` using `mailgun.js` (EU endpoint)
+
+- GET `/api/recigrab/oembed?url={META_URL}`
+  - `url` must be on `instagram.com`, `facebook.com`, or `threads.net`
+  - Server-only proxy to Meta Graph oEmbed endpoints using env credentials
+  - Returns normalized JSON with embed html + metadata (or friendly errors)
+  - Implemented in `app/api/recigrab/oembed/route.ts`
+
+## Meta App Review (ReciGrab oEmbed Read)
+
+- Public reviewer page:
+  - `https://bysaether.com/recigrab/oembed-demo`
+  - (also works on subdomain path `https://recigrab.bysaether.com/oembed-demo`)
+- Local run:
+  - `npm install`
+  - `cp .env.example .env.local`
+  - fill Meta env values in `.env.local`
+  - `npm run dev`
+  - open `http://localhost:3000/recigrab/oembed-demo`
+- Review flow:
+  - Open the demo page.
+  - Keep the default sample URL, or paste a public Instagram/Facebook/Threads post URL.
+  - Click `Load Meta oEmbed`.
+  - Confirm that the oEmbed preview and metadata load.
+  - No login is required.
 
 ## Project Structure
 
