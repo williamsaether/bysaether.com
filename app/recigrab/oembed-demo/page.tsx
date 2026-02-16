@@ -3,7 +3,7 @@
 import { FormEvent, useMemo, useState } from "react";
 import styles from "./oembed-demo.module.css";
 
-const SAMPLE_URL = "https://www.instagram.com/p/BUawPlPF_Rx/";
+const SAMPLE_URL = "https://www.instagram.com/reel/DUl7wExk_Y5/";
 
 type OEmbedSuccess = {
   success: true;
@@ -113,7 +113,7 @@ export default function ReciGrabOEmbedDemoPage() {
           <h2>Test Instructions for Meta Reviewer</h2>
           <ol>
             <li>Open this page directly.</li>
-            <li>Keep the sample URL below or paste another public Instagram/Facebook/Threads post URL.</li>
+            <li>Keep the sample URL below or paste another public Instagram/Facebook reel (or post) URL.</li>
             <li>Click &quot;Load Meta oEmbed&quot;.</li>
             <li>Confirm the embed preview renders and metadata appears.</li>
           </ol>
