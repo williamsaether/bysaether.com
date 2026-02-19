@@ -1,5 +1,11 @@
 import styles from "@/app/legal.module.css";
-import { supportEmail } from "@/constants/Constants";
+import {
+  businessAddress,
+  businessName,
+  legalEmail,
+  orgNumber,
+  supportEmail
+} from "@/constants/Constants";
 
 export default function PrivacyPolicy() {
   return (
@@ -103,10 +109,19 @@ export default function PrivacyPolicy() {
 
         <h3>8. Contact Us</h3>
         <p>If you have questions about this Privacy Policy, contact us at:</p>
-        <p>Email: {supportEmail}</p>
+        <p>{businessName}</p>
+        <p>Org.nr: {orgNumber}</p>
+        <p>Address: {businessAddress}</p>
+        <p>Preferred contact: {supportEmail}</p>
+        <p>Legal contact: {legalEmail}</p>
         <p>
           <a href={"/recigrab/manage-data"} rel="noopener noreferrer">
             Manage Data / Deletion Instructions
+          </a>
+        </p>
+        <p>
+          <a href={"/recigrab/terms-of-service"} rel="noopener noreferrer">
+            Terms of Service
           </a>
         </p>
       </main>

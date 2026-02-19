@@ -3,7 +3,16 @@
 import Image from 'next/image'
 import Link from "next/link";
 import styles from "./Footer.module.css";
-import {github, instagram, linkedin, supportEmail} from "@/constants/Constants";
+import {
+  businessAddress,
+  businessName,
+  github,
+  instagram,
+  legalEmail,
+  linkedin,
+  orgNumber,
+  supportEmail
+} from "@/constants/Constants";
 
 export default function Footer() {
 
@@ -90,6 +99,20 @@ export default function Footer() {
         <div className={styles.bottomLeft}>
           <p>&copy; 2025 BySaether</p>
           <p>All Rights Reserved</p>
+        </div>
+        <div className={styles.legalEntity}>
+          <p>{businessName} · Org.nr {orgNumber}</p>
+          <p>{businessAddress}</p>
+          <p>
+            Contact:{" "}
+            <a href={`mailto:${supportEmail}`} target="_blank" rel="noopener noreferrer">
+              {supportEmail}
+            </a>
+            {" "} · Legal:{" "}
+            <a href={`mailto:${legalEmail}`} target="_blank" rel="noopener noreferrer">
+              {legalEmail}
+            </a>
+          </p>
         </div>
       </div>
     </footer>

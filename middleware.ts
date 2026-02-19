@@ -47,7 +47,7 @@ export function middleware(req: NextRequest) {
   }
 
   if (subdomain === 'recigrab') {
-    if (['/','/privacy-policy','/manage-data','/oembed-demo'].includes(url.pathname)) {
+    if (['/','/privacy-policy','/manage-data','/oembed-demo','/terms-of-service'].includes(url.pathname)) {
       url.pathname = `/recigrab${url.pathname}`;
       return NextResponse.rewrite(url);
     }

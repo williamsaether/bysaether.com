@@ -1,5 +1,11 @@
 import styles from "@/app/legal.module.css";
-import { supportEmail } from "@/constants/Constants";
+import {
+  businessAddress,
+  businessName,
+  legalEmail,
+  orgNumber,
+  supportEmail
+} from "@/constants/Constants";
 
 export default function ManageData() {
   return (
@@ -44,10 +50,19 @@ export default function ManageData() {
         </p>
 
         <h3>Need Help?</h3>
-        <p>Contact us at: {supportEmail}</p>
+        <p>{businessName}</p>
+        <p>Org.nr: {orgNumber}</p>
+        <p>Address: {businessAddress}</p>
+        <p>Preferred contact: {supportEmail}</p>
+        <p>Legal contact: {legalEmail}</p>
         <p>
           <a href={"/recigrab/privacy-policy"} rel="noopener noreferrer">
             Privacy Policy
+          </a>
+        </p>
+        <p>
+          <a href={"/recigrab/terms-of-service"} rel="noopener noreferrer">
+            Terms of Service
           </a>
         </p>
       </main>
