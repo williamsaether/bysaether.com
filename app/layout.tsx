@@ -26,6 +26,9 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
   return (
     <ThemeProvider>
       <html lang="en">
+        <head>
+          <meta name="facebook-domain-verification" content="o9yuzf407ggfdsxjbx0z40i7iwd9r1" />
+        </head>
         <body className={`${geistSans.variable} ${geistMono.variable}`}>
           <Header/>
           {children}
