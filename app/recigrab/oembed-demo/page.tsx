@@ -28,42 +28,6 @@ type OEmbedError = {
 
 type OEmbedResponse = OEmbedSuccess | OEmbedError;
 
-const MOCK_PREVIEW = {
-  postUrl: "https://www.instagram.com/reel/DUl7wExk_Y5/",
-  imageUrl: "/630111750_17937964053151947_1773085047881503301_n.jpg",
-  caption:
-    `Brown Butter Chocolate Chip Banana Bread 🍌
-
-Comment “Recipe” and I’ll send you the full recipe card for free!!
-
-For all of you asking about the app, search “Osta Recipes” on the app or Google play store ‼️🫶
-
-I have tested over 100 banana bread recipes and after countless adjustments, these officially have claimed the #1 spot 👑
-
-Ingredients
--3 ripe bananas (brown spots = flavor)
--9 tbsp unsalted butter (browns down to ~1/2 cup)
--1 large egg, room temp
--3/4 cup brown sugar
--1/4 cup white sugar
--1 1/2 cups all-purpose flour
--1 tsp baking soda
--1/2 tsp baking powder
--1/2 tsp salt
--1 tsp cinnamon
--1 tsp vanilla extract or paste
--1 to 1 1/2 cups semi-sweet chocolate chips (measure with your heart)
-
-Instructions:
-1. Add butter to a saucepan over medium heat. Stir often. It'll melt, foam, sizzle, then turn golden with a nutty smell. Once browned (do not burn), pour into a bowl and place in the freezer for 5 mins. You want it warm, not hot.
-2. In a large bowl, mash bananas until mostly smooth. Add 1/2 cup of the browned butter, brown sugar, white sugar, egg, and vanilla. Whisk for 1 to 2 mins until glossy.
-3. Add flour, baking soda, baking powder, salt, and cinnamon. You can mix these in a separate bowl first, or be lazy like me and add them straight in. Just mix very thoroughly so everything is evenly distributed.
-4. Preheat to 350F / 175C. Once no dry flour remains, fold in about 1 cup of chocolate chips. Save the rest for topping.
-5. Line or grease a loaf pan and pour in the batter. Sprinkle remaining chocolate chips on top. Bake for 60 mins, loosely covering with foil halfway through to prevent over-browning.
-6. Insert a toothpick into the center. It should come out with a few moist crumbs, not wet batter. If needed, bake an extra 5 to 10 mins.
-7. Let cool slightly, then slice. Enjoy 🤠`,
-};
-
 function buildSafeSrcDoc(embedHtml: string): string {
   return `<!doctype html>
 <html lang="en">
@@ -79,25 +43,45 @@ function buildSafeSrcDoc(embedHtml: string): string {
 </html>`;
 }
 
+function normalizeInstagramUrl(value: string): string | null {
+  try {
+    const parsed = new URL(value);
+    const hostname = parsed.hostname.toLowerCase();
+    if (!(hostname === "instagram.com" || hostname.endsWith(".instagram.com"))) return null;
+
+    const cleanPath = parsed.pathname.replace(/\/+$/, "");
+    const match = cleanPath.match(/^\/(p|reel|tv)\/([^/]+)/i);
+    if (!match) return null;
+
+    const type = match[1].toLowerCase();
+    const mediaId = match[2];
+    return `https://www.instagram.com/${type}/${mediaId}/`;
+  } catch {
+    return null;
+  }
+}
+
 export default function ReciGrabOEmbedDemoPage() {
   const [url, setUrl] = useState<string>(SAMPLE_URL);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
   const [details, setDetails] = useState<string[]>([]);
   const [oembedData, setOembedData] = useState<OEmbedSuccess["data"] | null>(null);
-  const [showMockPreview, setShowMockPreview] = useState<boolean>(false);
+  const [showFallbackPreview, setShowFallbackPreview] = useState<boolean>(false);
+  const [fallbackEmbedUrl, setFallbackEmbedUrl] = useState<string>("");
 
   const srcDoc = useMemo(() => {
     if (!oembedData?.html) return "";
     return buildSafeSrcDoc(oembedData.html);
   }, [oembedData]);
-  const mockTitle = useMemo(() => MOCK_PREVIEW.caption.split("\n")[0], []);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setError("");
     setDetails([]);
     setOembedData(null);
+    setFallbackEmbedUrl("");
+    setShowFallbackPreview(false);
 
     const trimmedUrl = url.trim();
     if (!trimmedUrl) {
@@ -116,22 +100,31 @@ export default function ReciGrabOEmbedDemoPage() {
 
       if (response.ok && payload.success) {
         setOembedData(payload.data);
-        setShowMockPreview(false);
+        setShowFallbackPreview(false);
         return;
       }
 
       const fallbackError = "Could not load oEmbed data from Meta Graph API.";
+      const normalizedInstagramUrl = normalizeInstagramUrl(trimmedUrl);
+      if (normalizedInstagramUrl) {
+        setFallbackEmbedUrl(`${normalizedInstagramUrl}embed/captioned`);
+      }
+
       if (!payload.success) {
         setError(payload.error || fallbackError);
         setDetails(payload.details || []);
-        setShowMockPreview(true);
+        setShowFallbackPreview(true);
       } else {
         setError(fallbackError);
-        setShowMockPreview(true);
+        setShowFallbackPreview(true);
       }
     } catch {
       setError("Network error while loading oEmbed data.");
-      setShowMockPreview(true);
+      const normalizedInstagramUrl = normalizeInstagramUrl(trimmedUrl);
+      if (normalizedInstagramUrl) {
+        setFallbackEmbedUrl(`${normalizedInstagramUrl}embed/captioned`);
+      }
+      setShowFallbackPreview(true);
     } finally {
       setIsLoading(false);
     }
@@ -222,23 +215,20 @@ export default function ReciGrabOEmbedDemoPage() {
           </section>
         ) : null}
 
-        {showMockPreview ? (
+        {showFallbackPreview ? (
           <section className={styles.card}>
             <h2>Preview</h2>
-
-            <div className={styles.mockPhone}>
-              <div className={styles.mockBody}>
-                <a href={MOCK_PREVIEW.postUrl} target="_blank" rel="noopener noreferrer">
-                  <img className={styles.mockImage} width={200} height={400} src={MOCK_PREVIEW.imageUrl} alt={mockTitle} />
-                </a>
-                <h3 className={styles.mockTitle}>{mockTitle}</h3>
-                <pre className={styles.mockCaption}>{MOCK_PREVIEW.caption}</pre>
-                <p className={styles.mockFailureNote}>
-                  Live Meta oEmbed failed: {error}
-                  {details.length > 0 ? ` (${details[0]})` : ""}
-                </p>
+            {fallbackEmbedUrl ? (
+              <div className={styles.embedContainer}>
+                <iframe title="Instagram captioned fallback preview" src={fallbackEmbedUrl} loading="lazy" />
               </div>
-            </div>
+            ) : (
+              <p>Unable to build Instagram captioned preview from this URL.</p>
+            )}
+            <p className={styles.mockFailureNote}>
+              Live Meta oEmbed failed: {error}
+              {details.length > 0 ? ` (${details[0]})` : ""}
+            </p>
           </section>
         ) : null}
       </main>
