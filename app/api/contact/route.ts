@@ -11,8 +11,41 @@ const RATE_LIMIT_MAX_REQUESTS = 1;
 
 const HOURLY_LIMIT_WINDOW_MS = 60 * 60_000;
 const HOURLY_MAX_REQUESTS = 5;
+const BLOCKED_EMAIL_DOMAINS = [
+  "jmailservice.com", // known spam domain using my contact form
+  "mailinator.com",
+  "guerrillamail.com",
+  "10minutemail.com",
+  "temp-mail.org",
+  "tempmail.com",
+  "yopmail.com",
+  "trashmail.com",
+  "sharklasers.com",
+  "getnada.com",
+  "dispostable.com",
+  "maildrop.cc",
+  "fakeinbox.com",
+  "throwawaymail.com",
+  "mintemail.com",
+  "emailondeck.com",
+];
 
 const ipStore = new Map<string, number[]>();
+
+function getEmailDomain(email: string): string {
+  const at = email.lastIndexOf("@");
+  if (at < 0) return "";
+  return email.slice(at + 1).toLowerCase();
+}
+
+function isBlockedEmailDomain(email: string): boolean {
+  const domain = getEmailDomain(email);
+  if (!domain) return false;
+
+  return BLOCKED_EMAIL_DOMAINS.some(
+    (blocked) => domain === blocked || domain.endsWith(`.${blocked}`)
+  );
+}
 
 function rateLimit(ip: string): boolean {
   const now = Date.now();
@@ -32,7 +65,8 @@ function rateLimit(ip: string): boolean {
 }
 
 export async function POST(req: NextRequest) {
-  const ip = req.headers.get("x-forwarded-for") || "unknown";
+  const forwardedFor = req.headers.get("x-forwarded-for") || "unknown";
+  const ip = forwardedFor.split(",")[0]?.trim() || "unknown";
 
   if (!rateLimit(ip)) {
     return NextResponse.json(
@@ -46,10 +80,15 @@ export async function POST(req: NextRequest) {
 
   const body = await req.json()
   let {name, email, message, website} = body
+  name = typeof name === "string" ? name.trim() : "";
+  email = typeof email === "string" ? email.trim().toLowerCase() : "";
+  message = typeof message === "string" ? message.trim() : "";
+  website = typeof website === "string" ? website.trim() : "";
 
    // ignore spam (silently)
   if (
-    (website && website.trim() !== "") || 
+    website !== "" ||
+    isBlockedEmailDomain(email) ||
     (!message.includes(" ")) || 
     (name.length > 15 && !name.includes(" "))
   ) {
@@ -94,4 +133,3 @@ export async function POST(req: NextRequest) {
     );
   }
 }
-
