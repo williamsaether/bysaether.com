@@ -14,100 +14,98 @@ export default function PrivacyPolicy() {
       <header className={styles.header}>
         <span id={"intersector"} />
         <h1>Privacy Policy</h1>
-        <p className={styles.date}>Updated February 2026</p>
+        <p className={styles.date}>Updated March 2026</p>
         <p>
-          Welcome to ReciGrab. We respect your privacy and want to be clear about what data stays on your device, what
-          is sent for processing, and how your choices shape advertising and tracking.
+          This policy explains what stays on your device, what is processed through our backend, and what limited data
+          is stored to operate ReciGrab.
         </p>
       </header>
       <main className={styles.main}>
-        <h3>1. Information We Collect</h3>
-        <h4>Data You Provide</h4>
+        <h3>1. Overview</h3>
         <p>
-          Recipes you paste or import (including URLs and captions) and any manual edits you make are stored locally in
-          the app&apos;s SQLite database on your device.
+          ReciGrab is a local-first recipe app. No account is required to use the app. We do not build a personal
+          identity profile about you.
         </p>
-        <h4>AI Conversion Requests</h4>
         <p>
-          When you ask ReciGrab to convert the content into a structured recipe, the submitted text is sent over
-          HTTPS to api.bysaether.com/parse and processed by the OpenAI API to return the recipe. We do not
-          store these submissions on our servers.
-        </p>
-        <h4>Automatically Collected for Ads</h4>
-        <p>
-          Google AdMob may collect device and ad information (such as advertising ID, IP/country, app version, and OS)
-          to deliver and measure ads.
-        </p>
-        <h4>Analytics and Crash Reporting</h4>
-        <p>
-          Expo Insights collects app performance, crash diagnostics, device details, and app version information to help
-          us monitor and improve stability.
+          Recipe links and content come from links you provide (for example Instagram, TikTok, and websites). You are
+          responsible for your use of those platforms and their terms.
         </p>
 
-        <h3>2. Third-Party Services</h3>
-        <h4><strong>Google AdMob</strong> (ads)</h4>
+        <h3>2. Data Stored on Your Device</h3>
+        <p>
+          Recipes, imported links, extracted text, edits, preferences, and cached images are stored locally in the
+          app&apos;s SQLite database and local storage on your device.
+        </p>
+
+        <h3>3. Backend Processing</h3>
+        <p>
+          Some features use our backend at <strong>api.bysaether.com</strong>. When you trigger AI conversion,
+          relevant text is sent to <strong>/v2/convert</strong>, where it is processed using OpenAI to return a
+          structured recipe. The backend may also fetch source metadata (for example thumbnails) needed to display
+          imported links.
+        </p>
+
+        <h3>4. Backend Data We Store</h3>
+        <p>To operate and improve the service, we store limited device-based backend data, including:</p>
         <ul>
-          <li>Used for personalized or non-personalized advertising.</li>
-          <li>May collect device identifiers, region/IP, app version, and performance data for ad delivery.</li>
-          <li>On iOS, App Tracking Transparency (ATT) permission is requested when needed.</li>
-          <li>Manage your ad consent in <strong>Settings → Ad consent</strong> inside the app.</li>
-          <li>
-            Learn more about how Google uses ad data:{" "}
-            <a href="https://safety.google/privacy/ads-and-data/" target="_blank" rel="noopener noreferrer">
-              Google Ads Data Use
-            </a>
-          </li>
+          <li><strong>device_id</strong> (device-based identifier not directly tied to your real identity)</li>
+          <li>usage events</li>
+          <li>subscription status</li>
+          <li>cached metadata needed for link previews and service performance</li>
+        </ul>
+
+        <h3>5. Third-Party Services</h3>
+        <h4><strong>OpenAI</strong></h4>
+        <ul>
+          <li>Used through our backend for user-triggered AI conversion requests.</li>
+          <li>Receives content needed to generate structured recipe output.</li>
+        </ul>
+        <h4><strong>RevenueCat</strong></h4>
+        <ul>
+          <li>Used to validate and manage subscription status.</li>
+        </ul>
+        <h4><strong>Google AdMob</strong></h4>
+        <ul>
+          <li>Used to serve and measure ads for free users.</li>
+          <li>May collect advertising and device data according to Google&apos;s policies.</li>
         </ul>
         <h4><strong>Expo Insights</strong></h4>
         <ul>
-          <li>Collects analytics and crash diagnostics (including device/app version info) to improve app stability.</li>
+          <li>Used for app performance and stability diagnostics.</li>
         </ul>
-        <h4><strong>OpenAI API (gpt-4o-mini via api.bysaether.com/parse)</strong></h4>
+        <h4><strong>Sentry</strong></h4>
         <ul>
-          <li>Receives the text you submit for recipe parsing and returns structured recipes.</li>
-          <li>No additional personal data is sent beyond the text you provide for parsing.</li>
-        </ul>
-        <h4><strong>Embedded WebViews</strong> (opening recipe source links)</h4>
-        <ul>
-          <li>WebViews load external sites you choose; those sites collect data under their own policies.</li>
-          <li>We do not control or monitor content on those sites. Review their privacy terms before sharing data.</li>
+          <li>Used for error monitoring, crash diagnostics, and app analytics.</li>
+          <li>May receive technical device and app event data needed to diagnose issues.</li>
         </ul>
 
-        <h3>3. How We Use Your Information</h3>
-        <ul>
-          <li>Convert your submitted captions/titles into structured recipes via api.bysaether.com/parse and OpenAI.</li>
-          <li>Display and measure ads (personalized if consented, otherwise non-personalized).</li>
-          <li>Monitor performance and resolve crashes through Expo Insights.</li>
-        </ul>
-
-        <h3>4. How We Store Your Data</h3>
+        <h3>6. Social Platform Content</h3>
         <p>
-          Recipes and preferences are stored locally in the on-device SQLite database. AI requests are sent over HTTPS to
-          api.bysaether.com/parse for processing by OpenAI, and responses are saved only on your device. We do not run
-          our own cloud database for ReciGrab.
+          ReciGrab does not claim ownership of content from Instagram, TikTok, or other source platforms. We do not
+          permanently store platform content on the backend as your personal recipe library. Imported recipe data is
+          saved primarily on your device.
         </p>
 
-        <h3>5. Your Choices and Controls</h3>
+        <h3>7. Your Choices and Controls</h3>
         <ul>
-          <li>Manage ad consent and tracking in <strong>Settings → Ad consent</strong> and, on iOS, in system tracking settings.</li>
+          <li>Manage ad consent in <strong>Settings → Ad consent</strong> and in iOS tracking settings when available.</li>
           <li>Opting out of personalized ads switches to non-personalized ads.</li>
-          <li>Clear local recipes and AI submissions in the app&apos;s Handle data controls or by uninstalling the app.</li>
-          <li>WebView browsing follows the policies of the sites you open.</li>
+          <li>Delete local recipes and cached data in app settings or by uninstalling the app.</li>
+          <li>See <a href={"/recigrab/manage-data"} rel="noopener noreferrer">Manage Your Data</a> for deletion steps.</li>
         </ul>
 
-        <h3>6. Children&apos;s Privacy</h3>
+        <h3>8. Children&apos;s Privacy</h3>
         <p>
-          ReciGrab is intended for users 13+ and is not directed to children. The app includes unrestricted web access
-          through WebViews and ads that may contain content for adults.
+          ReciGrab is intended for users 13+ and is not directed to children.
         </p>
 
-        <h3>7. Changes to This Policy</h3>
+        <h3>9. Changes to This Policy</h3>
         <p>
-          We may update this policy to reflect app changes or legal requirements. Updates will be posted in the app, and
-          continued use after changes means you accept the revised policy.
+          We may update this policy to reflect app changes, provider changes, or legal requirements. Continued use
+          after updates means you accept the revised policy.
         </p>
 
-        <h3>8. Contact Us</h3>
+        <h3>10. Contact Us</h3>
         <p>If you have questions about this Privacy Policy, contact us at:</p>
         <p>{businessName}</p>
         <p>Org.nr: {orgNumber}</p>
