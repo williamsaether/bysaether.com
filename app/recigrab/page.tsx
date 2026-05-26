@@ -4,10 +4,7 @@ import Image from "next/image";
 import styles from './recigrab.module.css'
 import {
   IoFastFood,
-  IoList,
   IoNutrition,
-  IoPlayCircle,
-  IoTimer,
   IoSparkles
 } from "react-icons/io5";
 import projects from "@/data/projects";

@@ -1,6 +1,5 @@
 import styles from "@/app/legal.module.css"
 import {supportEmail} from "@/constants/Constants";
-import Head from "next/head";
 
 export default function CookiePolicy() {
   return (

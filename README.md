@@ -6,7 +6,7 @@ BySaether.com is the portfolio and product hub for BySaether — showcasing proj
 
 ## Tech Stack
 
-- Framework: Next.js 15 (App Router)
+- Framework: Next.js 16 (App Router)
 - Language: TypeScript
 - UI: React 19, CSS Modules
 - Motion/UX: `motion` (Framer Motion compatible API), `react-icons`
@@ -23,11 +23,11 @@ BySaether.com is the portfolio and product hub for BySaether — showcasing proj
   - API route: `app/api/contact/route.ts` (POST JSON: `name`, `email`, `message`)
 - Theme toggle with persistence
   - `context/ThemeContext.tsx` (localStorage + `data-theme` attribute)
-- Subdomain routing via middleware
+- Subdomain routing via Proxy
   - `contact.bysaether.com` → `app/contact/page.tsx`
   - `codecore.bysaether.com` → `app/codecore` (home, privacy policy, manage data)
   - `codegrab.bysaether.com` → `app/codegrab/privacy-policy`
-  - Implemented in `middleware.ts` using Next.js Edge middleware
+  - Implemented in `proxy.ts` using Next.js Proxy
 - Image optimization with Next/Image
 - Vercel Analytics integration
 
@@ -108,7 +108,7 @@ BySaether.com is the portfolio and product hub for BySaether — showcasing proj
 - `constants/` — App constants (links, support email)
 - `data/` — Static project data (`projects.js`)
 - `public/` — Static assets (images, icons)
-- `middleware.ts` — Subdomain routing/rewrites
+- `proxy.ts` — Subdomain routing/rewrites
 - `next.config.ts` — Next.js config (image qualities)
 - `eslint.config.mjs`, `tsconfig.json` — Linting and TypeScript config
 
@@ -121,8 +121,8 @@ BySaether.com is the portfolio and product hub for BySaether — showcasing proj
     - `contact.bysaether.com`
     - `codecore.bysaether.com`
     - `codegrab.bysaether.com`
-  - Middleware runs on the Edge runtime and handles subdomain rewrites/redirects
-- Alternative platforms should support Next.js App Router and Edge middleware for equivalent behavior
+  - Proxy handles subdomain rewrites/redirects
+- Alternative platforms should support Next.js App Router and Proxy for equivalent behavior
 
 ## Security and Secrets
 

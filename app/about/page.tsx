@@ -4,13 +4,11 @@ import Image from "next/image";
 import styles from './about.module.css'
 import Link from "next/link";
 import {useRef} from "react";
-import Head from "next/head";
 
 export default function About() {
-  const teamSection = useRef(null);
+  const teamSection = useRef<HTMLSpanElement>(null);
 
   const scrollToTeam = () => {
-    // @ts-ignore
     teamSection.current?.scrollIntoView({behavior: "smooth"});
   }
 

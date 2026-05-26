@@ -7,14 +7,13 @@ import Form from "next/form";
 import {FormEvent, useRef, useState} from "react";
 
 export default function Support() {
-  const formSection = useRef(null);
+  const formSection = useRef<HTMLSpanElement>(null);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [response, setResponse] = useState<{success: boolean, message: string} | undefined>(undefined);
 
   const scrollToForm = () => {
-    // @ts-ignore
     formSection.current?.scrollIntoView({behavior: "smooth"})
   }
 
@@ -32,7 +31,7 @@ export default function Support() {
 
       const data = await res.json();
       setResponse(data);
-    } catch (err) {
+    } catch {
       setResponse({ success: false, message: "An error occurred while sending the email. Please try again later." });
     }
   }

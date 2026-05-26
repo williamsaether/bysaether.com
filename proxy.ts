@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import {NextURL} from "next/dist/server/web/next-url";
 
 export const config = {
   matcher: [
@@ -15,55 +14,61 @@ export const config = {
   ],
 };
 
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
   const host = req.headers.get('host') || '';
   const [subdomain] = host.split('.');
 
   const url = req.nextUrl.clone();
 
-  if (url.pathname === '/home') return redirectHome(url)
+  if (url.pathname === '/home') return redirectHome(url);
 
   if (subdomain === 'contact') {
     if (url.pathname === '/') {
-      url.pathname = `/contact`;
+      url.pathname = '/contact';
       return NextResponse.redirect(url);
-    } else return redirectHome(url,false)
+    }
+
+    return redirectHome(url, false);
   }
 
   if (subdomain === 'codecore') {
-    if (['/','/privacy-policy', '/manage-data'].includes(url.pathname)) {
+    if (['/', '/privacy-policy', '/manage-data'].includes(url.pathname)) {
       url.pathname = `/codecore${url.pathname}`;
       return NextResponse.rewrite(url);
     }
-    return redirectHome(url,false)
+
+    return redirectHome(url, false);
   }
 
   if (subdomain === 'codegrab') {
-    if (['/privacy-policy'].includes(url.pathname)) {
+    if (url.pathname === '/privacy-policy') {
       url.pathname = `/codegrab${url.pathname}`;
       return NextResponse.rewrite(url);
     }
-    return redirectHome(url,false)
+
+    return redirectHome(url, false);
   }
 
   if (subdomain === 'recigrab') {
-    if (['/','/privacy-policy','/manage-data','/oembed-demo','/terms-of-service'].includes(url.pathname)) {
+    if (['/', '/privacy-policy', '/manage-data', '/oembed-demo', '/terms-of-service'].includes(url.pathname)) {
       url.pathname = `/recigrab${url.pathname}`;
       return NextResponse.rewrite(url);
     }
-    return redirectHome(url,false)
+
+    return redirectHome(url, false);
   }
 
   return NextResponse.next();
 }
 
-function redirectHome(url: NextURL, removePath: boolean = true) {
-  const targetUrl = new NextURL(url);
+function redirectHome(url: NextRequest['nextUrl'], removePath = true) {
+  const targetUrl = url.clone();
   targetUrl.host = 'bysaether.com';
 
   if (removePath) {
     targetUrl.pathname = '/';
-    return NextResponse.redirect(targetUrl.toString());
+    return NextResponse.redirect(targetUrl);
   }
-  return NextResponse.rewrite(targetUrl.toString());
+
+  return NextResponse.rewrite(targetUrl);
 }

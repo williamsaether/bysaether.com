@@ -7,7 +7,6 @@ import projects from "@/data/projects";
 import Link from "next/link";
 import React from "react";
 import {TiltCard} from "@/components/TiltCard";
-import { motion } from "motion/react";
 
 const projectsFront = [
 	{

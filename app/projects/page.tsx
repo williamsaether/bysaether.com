@@ -4,7 +4,6 @@ import projects from '@/data/projects'
 import Image from "next/image";
 import styles from './projects.module.css'
 import {useState} from "react";
-import Head from "next/head";
 
 export default function Projects() {
   const categories = ["All", "Website", "App", "Design", "Extension"]

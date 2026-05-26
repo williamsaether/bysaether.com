@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from "next/link";
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useState} from "react";
 import styles from "./Header.module.css";
 import { usePathname } from "next/navigation";
 import {github, instagram, linkedin} from "@/constants/Constants";
