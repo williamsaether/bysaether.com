@@ -97,7 +97,7 @@ export default function Footer() {
         </div>
         <span/>
         <div className={styles.bottomLeft}>
-          <p>&copy; 2025 BySaether</p>
+          <p>&copy; {new Date().getFullYear()} BySaether</p>
           <p>All Rights Reserved</p>
         </div>
         <div className={styles.legalEntity}>
