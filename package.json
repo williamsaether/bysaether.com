@@ -9,10 +9,10 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@vercel/analytics": "^1.4.1",
-    "form-data": "^4.0.1",
-    "mailgun.js": "^12.7.0",
-    "motion": "^12.23.24",
+    "@vercel/analytics": "^2.0.1",
+    "form-data": "^4.0.5",
+    "mailgun.js": "^13.1.0",
+    "motion": "^12.40.00",
     "next": "^16.2.6",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
