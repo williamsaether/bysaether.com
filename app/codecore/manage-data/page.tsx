@@ -2,7 +2,6 @@ import styles from "@/app/legal.module.css"
 import {
 	businessAddress,
 	businessName,
-	legalEmail,
 	orgNumber,
 	supportEmail
 } from "@/constants/Constants";
@@ -28,8 +27,7 @@ export default function ManageData() {
 				<p>{businessName}</p>
 				<p>Org.nr: {orgNumber}</p>
 				<p>Address: {businessAddress}</p>
-				<p>Preferred contact: {supportEmail}</p>
-				<p>Legal contact: {legalEmail}</p>
+				<p>Contact: {supportEmail}</p>
 				<p><a href={'/privacy-policy'} rel="noopener noreferrer">Privacy Policy</a></p>
 			</main>
 		</div>

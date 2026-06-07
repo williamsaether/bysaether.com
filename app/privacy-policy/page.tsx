@@ -8,8 +8,8 @@ export default function PrivacyPolicy() {
       <header className={styles.header}>
         <span id={"intersector"}/>
         <h1>Privacy Policy</h1>
-        <p className={styles.date}>Updated January 2025</p>
-        <p>At BySaether, we respect your privacy and are committed to protecting the personal information you provide us. This Privacy Policy outlines how we collect, use, and safeguard your data.</p>
+        <p className={styles.date}>Updated June 2026</p>
+        <p>At BySaether, we respect your privacy and are committed to protecting the personal information you provide us. This Privacy Policy outlines how we collect, use, and safeguard company website data.</p>
       </header>
       <main className={styles.main}>
         <h3>1. Information We Collect</h3>
@@ -20,7 +20,7 @@ export default function PrivacyPolicy() {
           <li>Your message or inquiry</li>
         </ul>
         <h3>2. How We Use Your Information</h3>
-        <p>We use the information you provide solely to respond to your inquiries and improve out services.</p>
+        <p>We use the information you provide solely to respond to your inquiries and improve our services.</p>
         <h3>3. How We Store Your Data</h3>
         <p>Your data is securely stored and will only be accessible to authorized personnel. We do not retain your personal information longer than necessary.</p>
         <h3>4. Sharing of Information</h3>

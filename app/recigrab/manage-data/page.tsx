@@ -2,7 +2,6 @@ import styles from "@/app/legal.module.css";
 import {
   businessAddress,
   businessName,
-  legalEmail,
   orgNumber,
   supportEmail
 } from "@/constants/Constants";
@@ -14,7 +13,7 @@ export default function ManageData() {
       <header className={styles.header}>
         <span id={"intersector"} />
         <h1>Manage Your Data</h1>
-        <p className={styles.date}>Updated March 2026</p>
+        <p className={styles.date}>Updated June 2026</p>
         <p>
           This page explains how to manage data stored on your device and how to request deletion of limited
           backend data used to operate ReciGrab.
@@ -53,7 +52,7 @@ export default function ManageData() {
         <h3>4. Request Backend Data Deletion</h3>
         <p>
           To request deletion of backend data associated with your device, email us at <strong>{supportEmail}</strong>{" "}
-          or <strong>{legalEmail}</strong> with the subject <strong>ReciGrab Data Deletion Request</strong>.
+          with the subject <strong>ReciGrab Data Deletion Request</strong>.
         </p>
         <p>
           Include any app/device identifiers you can access in the app to help us locate records. We may request
@@ -64,8 +63,7 @@ export default function ManageData() {
         <p>{businessName}</p>
         <p>Org.nr: {orgNumber}</p>
         <p>Address: {businessAddress}</p>
-        <p>Preferred contact: {supportEmail}</p>
-        <p>Legal contact: {legalEmail}</p>
+        <p>Contact: {supportEmail}</p>
         <p>
           <a href={"/recigrab/privacy-policy"} rel="noopener noreferrer">
             Privacy Policy

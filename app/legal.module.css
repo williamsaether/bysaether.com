@@ -39,6 +39,15 @@
     color: #00c7ff;
 }
 
+.linkList {
+    list-style: none;
+    margin-left: 0 !important;
+}
+
+.linkList li {
+    margin-top: .5rem;
+}
+
 @media (max-width: 600px) {
     .main h3 {
         font-size: 1.4rem;

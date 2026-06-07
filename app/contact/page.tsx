@@ -5,6 +5,7 @@ import styles from './contact.module.css'
 import Image from "next/image";
 import Form from "next/form";
 import {FormEvent, useRef, useState} from "react";
+import {supportEmail} from "@/constants/Constants";
 
 export default function Support() {
   const formSection = useRef<HTMLSpanElement>(null);
@@ -127,7 +128,7 @@ export default function Support() {
               <div className={styles.contactInfo}>
                 <div>
                   <p>Email</p>
-                  <a href={'mailto:bysaether@gmail.com'}>bysaether@gmail.com</a>
+                  <a href={`mailto:${supportEmail}`}>{supportEmail}</a>
                 </div>
               </div>
             </div>

@@ -8,7 +8,6 @@ import {
   businessName,
   github,
   instagram,
-  legalEmail,
   linkedin,
   orgNumber,
   supportEmail
@@ -32,6 +31,7 @@ export default function Footer() {
           <div className={styles.part}>
             <h4>Legal</h4>
             <nav>
+              <Link href={'/legal'}>Legal overview</Link>
               <Link href={'/privacy-policy'}>Privacy policy</Link>
               <Link href={'/cookie-policy'}>Cookie policy</Link>
             </nav>
@@ -79,7 +79,7 @@ export default function Footer() {
           <div className={styles.part}>
             <h4>Contact</h4>
             <a
-              href={'mailto:bysaether@gmail.com'}
+              href={`mailto:${supportEmail}`}
               target="_blank"
               rel="noopener noreferrer"
             >{supportEmail}</a>
@@ -107,10 +107,6 @@ export default function Footer() {
             Contact:{" "}
             <a href={`mailto:${supportEmail}`} target="_blank" rel="noopener noreferrer">
               {supportEmail}
-            </a>
-            {" "} · Legal:{" "}
-            <a href={`mailto:${legalEmail}`} target="_blank" rel="noopener noreferrer">
-              {legalEmail}
             </a>
           </p>
         </div>

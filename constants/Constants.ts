@@ -1,6 +1,5 @@
-export const supportEmail = 'bysaether@gmail.com'
-export const legalEmail = 'william.saether03@gmail.com'
-export const businessName = 'William Sæther ENK'
+export const supportEmail = 'support@bysaether.com'
+export const businessName = 'William Sæther Enk'
 export const orgNumber = '937089570'
 export const businessAddress = 'Klæbuveien 126, 7031 Trondheim, Norway'
 
