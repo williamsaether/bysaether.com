@@ -58,6 +58,15 @@ export function proxy(req: NextRequest) {
     return redirectHome(url, false);
   }
 
+  if (subdomain === 'oneset') {
+    if (['/', '/privacy-policy', '/terms-of-service'].includes(url.pathname)) {
+      url.pathname = `/oneset${url.pathname}`;
+      return NextResponse.rewrite(url);
+    }
+
+    return redirectHome(url, false);
+  }
+
   return NextResponse.next();
 }
 
