@@ -104,16 +104,15 @@ export default async function Project({ params }: {params: Promise<{ id: string 
       </main>
       {project.screenshots && project.screenshots.length > 0 && <div className={styles.screenshots}>
         {project.screenshots.map((screenshot, index) => (
-          <div key={index}>
-            <Image
-              src={screenshot}
-              alt={`Screenshot of application`}
-              height={1920}
-              width={1080}
-              quality={100}
-              style={{objectFit: "contain"}}
-            />
-          </div>
+          <Image
+            key={index}
+            src={screenshot}
+            alt={`Screenshot of application`}
+            height={1920}
+            width={1080}
+            quality={100}
+            style={{objectFit: "contain"}}
+          />
         ))}
       </div>}
     </div>

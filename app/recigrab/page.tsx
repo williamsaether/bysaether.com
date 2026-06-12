@@ -9,6 +9,7 @@ import {
 } from "react-icons/io5";
 import projects from "@/data/projects";
 import { useState } from "react";
+import ProductLegalLinks from "@/components/ProductLegalLinks";
 
 const pages = [
   {
@@ -172,6 +173,14 @@ export default function ReciGrab() {
           </div>
         </div>
       </section>
+
+      <ProductLegalLinks
+        links={[
+          {href: "/recigrab/privacy-policy", label: "Privacy Policy"},
+          {href: "/recigrab/terms-of-service", label: "Terms of Service"},
+          {href: "/recigrab/manage-data", label: "Manage Data"},
+        ]}
+      />
     </div>
   )
 }

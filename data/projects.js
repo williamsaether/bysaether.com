@@ -178,7 +178,49 @@ const projects = [
       "/images/recigrab/screenshots/settings.webp",
       "/images/recigrab/screenshots/settings-conversion.webp",
     ]
-  }
+  },
+  {
+    "id": "oneset",
+    "categories": ["App"],
+    "name": "OneSet",
+    "short": "Workout Streaks",
+    "description": "A minimal fitness streak app for building consistency with one quick set at a time.",
+    "techStack": [
+      "React Native",
+      "Expo",
+      "SQLite",
+      "RevenueCat",
+      "WidgetKit"
+    ],
+    "logoURL": "/images/oneset/logo-1024.png",
+    "squareLogoURL": "/images/oneset/logo-1024.png",
+    "showURL": "/images/oneset/overview.webp",
+    "websiteLink": "https://oneset.bysaether.com",
+    "appStore": {
+      "apple": "https://apps.apple.com/app/oneset/id6779372858",
+      "google": ""
+    },
+    "details": {
+      "overview": "OneSet is built around a simple idea: doing one small activity consistently is better than overplanning and doing nothing. Users can track recurring activities like pushups, pullups, situps, squats, or anything custom, then build streaks through a fast daily flow.",
+      "features": [
+        "Track one or more recurring activities with daily, every-other-day, or custom schedules.",
+        "Build streaks and view progress over time with calendar history.",
+        "Set lightweight reminders that fit naturally into the day.",
+        "Use Home Screen and Lock Screen widgets to keep streaks visible.",
+        "Pause activities without losing the overall setup.",
+        "Offline-first design with local storage."
+      ],
+      "goals": "The goal with OneSet is to make consistency feel easy. Instead of turning fitness tracking into a complex routine, the app focuses on one clear action, quick completion, and enough visibility to keep the habit alive."
+    },
+    "screenshots": [
+      "/images/oneset/screenshots/home.webp",
+      "/images/oneset/screenshots/setup.webp",
+      "/images/oneset/screenshots/history-all.webp",
+      "/images/oneset/screenshots/history-situps.webp",
+      "/images/oneset/screenshots/homescreen-due.webp",
+      "/images/oneset/screenshots/lock-screen.webp",
+    ]
+  },
 ]
 
 export default projects;

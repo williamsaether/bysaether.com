@@ -6,6 +6,7 @@ import {IoBrowsers, IoImage, IoList, IoQrCode, IoScan, IoSend} from "react-icons
 import {FaHistory} from "react-icons/fa";
 import projects from "@/data/projects";
 import {useState} from "react";
+import ProductLegalLinks from "@/components/ProductLegalLinks";
 
 const pages = [
 	{
@@ -179,6 +180,12 @@ export default function CodeCore() {
 					</div>
 				</div>
 			</section>
+			<ProductLegalLinks
+				links={[
+					{href: "/codecore/privacy-policy", label: "Privacy Policy"},
+					{href: "/codecore/manage-data", label: "Manage Data"},
+				]}
+			/>
 		</div>
 	)
 }
