@@ -32,7 +32,7 @@ export function proxy(req: NextRequest) {
   }
 
   if (subdomain === 'codecore') {
-    if (['/', '/privacy-policy', '/manage-data'].includes(url.pathname)) {
+    if (['/', '/privacy-policy', '/manage-data', '/terms-of-service'].includes(url.pathname)) {
       url.pathname = `/codecore${url.pathname}`;
       return NextResponse.rewrite(url);
     }
