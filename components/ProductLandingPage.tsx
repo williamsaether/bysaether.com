@@ -25,6 +25,14 @@ export type ProductLegalLink = {
   label: string;
 };
 
+type ProductStoreLink = {
+  href: string;
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+};
+
 type ProductLandingPageProps = {
   projectId: string;
   name: string;
@@ -52,8 +60,31 @@ export default function ProductLandingPage({
 }: ProductLandingPageProps) {
   const [currentView, setCurrentView] = useState(0);
   const activeView = views[currentView];
-  const appStoreUrl = projects.find(project => project.id === projectId)?.appStore?.apple;
-
+  const appStore = projects.find(project => project.id === projectId)?.appStore;
+  const storeLinks = [
+    appStore?.apple && {
+      href: appStore.apple,
+      src: "/images/appstore/apple-darkmode.svg",
+      alt: `Download ${name} on the Apple App Store`,
+      width: 150,
+      height: 50,
+    },
+    appStore?.google && {
+      href: appStore.google,
+      src: "/images/appstore/google.svg",
+      alt: `Get ${name} on Google Play`,
+      width: 180,
+      height: 53,
+    },
+    appStore?.chrome && {
+      href: appStore.chrome,
+      src: "/images/appstore/cws-darkmode.png",
+      alt: `Get ${name} on the Chrome Web Store`,
+      width: 178,
+      height: 50,
+    },
+  ].filter((storeLink): storeLink is ProductStoreLink => Boolean(storeLink));
+  
   if (!activeView) return null;
 
   return (
@@ -85,16 +116,25 @@ export default function ProductLandingPage({
           <h1>{headline}</h1>
           <p>{description}</p>
 
-          {appStoreUrl && (
-            <a href={appStoreUrl}>
-              <Image
-                src="/images/appstore/apple-darkmode.svg"
-                alt={`Download ${name} on the Apple App Store`}
-                width={150}
-                height={50}
-                className={styles.appStoreBadge}
-              />
-            </a>
+          {storeLinks.length > 0 && (
+            <div className={styles.appStore}>
+              {storeLinks.map(storeLink => (
+                <a
+                  key={storeLink.href}
+                  href={storeLink.href}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image
+                    src={storeLink.src}
+                    alt={storeLink.alt}
+                    width={storeLink.width}
+                    height={storeLink.height}
+                    className={styles.appStoreBadge}
+                  />
+                </a>
+              ))}
+            </div>
           )}
 
           <span id="intersector" />

@@ -15,7 +15,7 @@ const projects = [
     "websiteLink": "https://codecore.bysaether.com",
     "appStore": {
       "apple": "https://apps.apple.com/app/codecore/id6739577598",
-      "google": ""
+      "google": "https://play.google.com/store/apps/details?id=com.bysaether.codecore"
     },
     "details": {
       "overview": "CodeCore is designed to simplify the way you interact with barcodes and QR codes. With CodeCore, users can scan codes, assign them names, pin important ones, and organize them into lists.",
@@ -198,7 +198,7 @@ const projects = [
     "websiteLink": "https://oneset.bysaether.com",
     "appStore": {
       "apple": "https://apps.apple.com/app/oneset/id6779372858",
-      "google": ""
+      "google": "https://play.google.com/store/apps/details?id=com.williamsaether.oneset"
     },
     "details": {
       "overview": "OneSet is built around a simple idea: doing one small activity consistently is better than overplanning and doing nothing. Users can track recurring activities like pushups, pullups, situps, squats, or anything custom, then build streaks through a fast daily flow.",

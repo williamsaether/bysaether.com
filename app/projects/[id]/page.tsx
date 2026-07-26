@@ -40,7 +40,11 @@ export default async function Project({ params }: {params: Promise<{ id: string 
             >{project.websiteLink?.split('://')[1]}</a>
           </div>
           {project.appStore && <div className={styles.appStore}>
-            {project.appStore.apple && <a href={project.appStore.apple}>
+            {project.appStore.apple && <a 
+              href={project.appStore.apple} 
+              target="_blank" 
+              rel="noreferrer"
+            >
               <Image
                 src={'/images/appstore/apple-darkmode.svg'}
                 alt={`Apple App Store Link`}
@@ -49,7 +53,11 @@ export default async function Project({ params }: {params: Promise<{ id: string 
                 style={{objectFit: "contain"}}
               />
             </a>}
-            {project.appStore.google && <a href={project.appStore.google}>
+            {project.appStore.google && <a 
+              href={project.appStore.google}
+              target="_blank" 
+              rel="noreferrer"
+            >
               <Image
                 src={'/images/appstore/google.svg'}
                 alt={`Google Play Link`}
@@ -58,7 +66,11 @@ export default async function Project({ params }: {params: Promise<{ id: string 
                 style={{objectFit: "contain"}}
               />
             </a>}
-            {project.appStore.chrome && <a href={project.appStore.chrome}>
+            {project.appStore.chrome && <a
+              href={project.appStore.chrome}
+              target="_blank"
+              rel="noreferrer"
+            >
               <Image
                 src={'/images/appstore/cws-darkmode.png'}
                 alt={`Chrome Webstore Link`}

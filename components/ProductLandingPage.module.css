@@ -57,9 +57,16 @@
   margin-bottom: .2em;
 }
 
+.appStore {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .4rem;
+  margin-top: 1em;
+}
+
 .appStoreBadge {
   object-fit: contain;
-  margin-top: 1em;
 }
 
 .section {
